@@ -118,6 +118,7 @@
   environment.systemPackages = with pkgs; [
     wget
     git
+    gh
     vim
     vscode
     autokey
