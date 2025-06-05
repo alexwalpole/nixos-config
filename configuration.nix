@@ -11,7 +11,7 @@
     ];
 
   # Bootloader.
- boot.loader = {
+  boot.loader = {
     efi = {
       canTouchEfiVariables = true;
       # efiSysMountPoint = "/efi"; # default /boot
@@ -23,7 +23,7 @@
       consoleMode = "max";
       windows = {
         "nvme0n1p1" = {
-          title = "Windows 11";
+          title = "Windows 10";
           # sudo blkid //check Windows ESP PARTUUID
           # reboot to systemd-boot uefi shell and type: map
           # find the FS alias match Windows ESP (ex: HD0a66666a2, HD0b, FS1, or BLK7)
@@ -160,7 +160,8 @@
     # Enable this if you have graphical corruption issues or application crashes after waking
     # up from sleep. This fixes it by saving the entire VRAM memory to /tmp/ instead 
     # of just the bare essentials.
-    powerManagement.enable = false;
+    # ALEX: i think this fixes my wake from sleep issues
+    powerManagement.enable = true;
 
     # Fine-grained power management. Turns off GPU when not in use.
     # Experimental and only works on modern Nvidia GPUs (Turing or newer).
@@ -210,9 +211,6 @@
       fi
     '';
   };
-
-
-
 
 
   # List services that you want to enable:
