@@ -134,6 +134,9 @@
     gnomeExtensions.hot-edge
     gnomeExtensions.hide-top-bar
     gnomeExtensions.just-perfection
+    uv
+    python3
+    ruff
   ];
 
   programs.steam = {
