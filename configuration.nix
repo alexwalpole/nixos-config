@@ -204,7 +204,39 @@
   hardware.bluetooth.enable = true; # enables support for Bluetooth
   hardware.bluetooth.powerOnBoot = true; # powers up the default Bluetooth controller on boot
 
-  programs.fish.enable = true;
+  programs.fish = {
+    enable = true;
+
+    shellAbbrs = {
+      gcm  = "git commit -m";
+      gcob = "git checkout -b";
+      gco  = "git checkout";
+
+      # Django specific
+      mp = "./manage.py";
+      mps = "./manage.py shell";
+
+      # uv
+      ur = "uv run";
+
+      # unix
+      ls = "ls -Fog";
+
+
+      # nixos
+      nrbs = "sudo nixos-rebuild switch";
+      ncg = "nix-collect-garbage";
+      # need to figure out these ones lol, copied from online
+      nhb = "home-manager switch --flake .#beard@nixos";
+      nhs = "home-manager switch --flake .#storage@storage";
+
+      nrn = "sudo nixos-rebuild switch --flake .#nixos";
+      nrs = "sudo nixos-rebuild switch --flake .#storage";
+
+
+    };
+  };
+
   # this is to not let fish break things
   programs.bash = {
     interactiveShellInit = ''
