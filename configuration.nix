@@ -137,6 +137,7 @@
     uv
     python3
     ruff
+    nodejs
   ];
 
   programs.steam = {

@@ -24,14 +24,15 @@
       options = [ "fmask=0077" "dmask=0077" ];
     };
 
-  fileSystems."/mnt/shared-sata" = {
-    device = "/dev/disk/by-uuid/5E5C729D5C72701F";
-    fsType = "ntfs";
+  fileSystems."/mnt/sata" = {
+    device = "/dev/disk/by-uuid/43e3c743-2ef3-414b-9275-5e26b4245dbb";
+    fsType = "ext4";
     options = [ # If you don't have this options attribute, it'll default to "defaults" 
       # boot options for fstab. Search up fstab mount options you can use
       "users" # Allows any user to mount and unmount
       "nofail" # Prevent system from failing if this drive doesn't mount
-      
+      "rw" # can read/write mount
+      "exec" # Permit execution of binaries and other executable files
     ];
   };
 
@@ -43,6 +44,7 @@
   # with explicit per-interface declarations with `networking.interfaces.<interface>.useDHCP`.
   networking.useDHCP = lib.mkDefault true;
   # networking.interfaces.eno1.useDHCP = lib.mkDefault true;
+  # networking.interfaces.wlp9s0.useDHCP = lib.mkDefault true;
 
   nixpkgs.hostPlatform = lib.mkDefault "x86_64-linux";
   hardware.cpu.amd.updateMicrocode = lib.mkDefault config.hardware.enableRedistributableFirmware;
