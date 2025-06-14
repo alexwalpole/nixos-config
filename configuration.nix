@@ -8,6 +8,8 @@
   imports =
     [ # Include the results of the hardware scan.
       ./hardware-configuration.nix
+      <home-manager/nixos>
+      #  --- TODO: the documentation i think says i need this, but i can just put home-manager in pkgs below?
     ];
 
   # Bootloader.
@@ -99,6 +101,8 @@
 
   # Define a user account. Don't forget to set a password with ‘passwd’.
   users.users.alexw = {
+    name = "alexw";
+    home = "/home/alexw";
     isNormalUser = true;
     description = "Alex Walpole";
     extraGroups = [ "networkmanager" "wheel" "openrazer"];
@@ -106,6 +110,28 @@
       thunderbird
     ];
   };
+
+  home-manager.backupFileExtension = "backup";
+  # home-manager.users.alexw = { pkgs, ... }: {
+  #   # programs.vscode = {
+  #   #   enable = true;
+  #   #   userSettings = {
+  #   #     "nix.enableLanguageServer" = true;
+  #   #     "nix.serverPath" = "nil";
+
+  #   #   };
+  #   # };
+
+  #   home.packages = [ pkgs.atool pkgs.httpie ];
+
+  #   home.stateVersion = "25.05";
+
+  #   programs.home-manager.enable = true;
+  #   programs.fish.enable = true;
+  # };
+  # home.username = "alexw";
+  # home.homeDirectory = "/home/alexw";
+
 
   # Install firefox.
   programs.firefox.enable = true;
@@ -138,6 +164,7 @@
     python3
     ruff
     nodejs
+    home-manager
   ];
 
   programs.steam = {
