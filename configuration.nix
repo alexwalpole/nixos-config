@@ -112,26 +112,6 @@
   };
 
   home-manager.backupFileExtension = "backup";
-  # home-manager.users.alexw = { pkgs, ... }: {
-  #   # programs.vscode = {
-  #   #   enable = true;
-  #   #   userSettings = {
-  #   #     "nix.enableLanguageServer" = true;
-  #   #     "nix.serverPath" = "nil";
-
-  #   #   };
-  #   # };
-
-  #   home.packages = [ pkgs.atool pkgs.httpie ];
-
-  #   home.stateVersion = "25.05";
-
-  #   programs.home-manager.enable = true;
-  #   programs.fish.enable = true;
-  # };
-  # home.username = "alexw";
-  # home.homeDirectory = "/home/alexw";
-
 
   # Install firefox.
   programs.firefox.enable = true;
@@ -253,12 +233,8 @@
       # nixos
       nrbs = "sudo nixos-rebuild switch";
       ncg = "nix-collect-garbage";
-      # need to figure out these ones lol, copied from online
-      nhb = "home-manager switch --flake .#beard@nixos";
-      nhs = "home-manager switch --flake .#storage@storage";
-
-      nrn = "sudo nixos-rebuild switch --flake .#nixos";
-      nrs = "sudo nixos-rebuild switch --flake .#storage";
+      # TODO: make ./home.nix better
+      nhs = "home-manager switch -f ./home.nix -b backup";
 
 
     };
