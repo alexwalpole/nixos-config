@@ -81,13 +81,6 @@
   programs.vscode = {
     enable = true;
 
-    # profiles.default.userSettings = {
-    #   "nix.enableLanguageServer" = true;
-    #   "nix.serverPath" = "nil";
-    #   "editor.formatOnSave" = true;
-    #   "workbench.sideBar.location" = "right";
-    #   "editor.inlineSuggest.enabled" = false;
-    # };
 
     profiles.default = {
       userSettings = {
@@ -122,37 +115,18 @@
           key = "ctrl+shift+h";
           command = "workbench.action.moveEditorToLeftGroup";
         }
+        {
+          key = "cmd+g";
+          command = "workbench.action.gotoLine";
+        }
+        {
+          key = "ctrl+alt+b";
+          command = "workbench.action.toggleEditorWidths";
+        }
 
       ];
     };
 
-    # profiles.default.keybindings = [
-    #   {
-    #     key = "ctrl+h";
-    #     command = "workbench.action.navigateLeft";
-    #   }
-    #   {
-    #     key = "ctrl+l";
-    #     command = "workbench.action.navigateRight";
-    #   }
-    #   {
-    #     key = "ctrl+k";
-    #     command = "workbench.action.navigateUp";
-    #   }
-    #   {
-    #     key = "ctrl+j";
-    #     command = "workbench.action.navigateDown";
-    #   }
-    #   {
-    #     key = "ctrl+shift+l";
-    #     command = "workbench.action.moveEditorToRightGroup";
-    #   }
-    #   {
-    #     key = "ctrl+shift+h";
-    #     command = "workbench.action.moveEditorToLeftGroup";
-    #   }
-
-    # ];
   };
 
   # # TODO: learn more about the actual syntax here
