@@ -91,22 +91,22 @@
         "editor.inlineSuggest.enabled" = false;
       };
       keybindings = [
-        {
-          key = "ctrl+h";
-          command = "workbench.action.navigateLeft";
-        }
-        {
-          key = "ctrl+l";
-          command = "workbench.action.navigateRight";
-        }
-        {
-          key = "ctrl+k";
-          command = "workbench.action.navigateUp";
-        }
-        {
-          key = "ctrl+j";
-          command = "workbench.action.navigateDown";
-        }
+        # {
+        #   key = "ctrl+h";
+        #   command = "workbench.action.navigateLeft";
+        # }
+        # {
+        #   key = "ctrl+l";
+        #   command = "workbench.action.navigateRight";
+        # }
+        # {
+        #   key = "ctrl+k";
+        #   command = "workbench.action.navigateUp";
+        # }
+        # {
+        #   key = "ctrl+j";
+        #   command = "workbench.action.navigateDown";
+        # }
         {
           key = "ctrl+shift+l";
           command = "workbench.action.moveEditorToRightGroup";
@@ -128,9 +128,11 @@
     };
 
   };
+  # xdg.configFile."Code".force = true;
 
-  # # TODO: learn more about the actual syntax here
-  # # inspired by: https://github.com/nix-community/home-manager/issues/1800#issuecomment-853589961
+  # TODO: learn more about the actual syntax here
+  # inspired by: https://github.com/nix-community/home-manager/issues/1800#issuecomment-853589961
+  # but eventually ended up with a mish mash of what's in that thread
   # home.activation = {
   #   afterWriteBoundary = {
   #     after = [ "writeBoundary" ];
@@ -138,7 +140,7 @@
   #     # I like to turn copilot and other things in vscode userSettings on/off regularly.
   #     # But I still want to set my base settings with nix
   #     data = ''
-  #       chmod +w $(readlink ~/.config/Code/User/settings.json --canonicalize)
+  #       install -m 0640 "$(readlink ~/.config/Code/User/settings.json)" ~/.config/Code/User/settings.json
   #     '';
   #   };
   # };
