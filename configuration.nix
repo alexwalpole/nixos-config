@@ -105,7 +105,7 @@
     home = "/home/alexw";
     isNormalUser = true;
     description = "Alex Walpole";
-    extraGroups = [ "networkmanager" "wheel" "openrazer"];
+    extraGroups = [ "networkmanager" "wheel" "openrazer" "docker"];
     packages = with pkgs; [
       thunderbird
     ];
@@ -159,6 +159,10 @@
   hardware.opengl.extraPackages32 = with pkgs.pkgsi686Linux; [ libva ];
 
   hardware.graphics = {
+    enable = true;
+  };
+  # In /etc/nixos/configuration.nix
+  virtualisation.docker = {
     enable = true;
   };
 
