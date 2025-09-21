@@ -96,6 +96,18 @@
     #media-session.enable = true;
   };
 
+  hardware.enableAllFirmware = true;
+
+  services.pipewire.wireplumber.extraConfig.bluetoothEnhancements = {
+    "monitor.bluez.properties" = {
+        "bluez5.enable-sbc-xq" = true;
+        "bluez5.enable-msbc" = false;
+        "bluez5.enable-hw-volume" = true;
+        "bluez5.auto-connect" = [ "a2dp_sink" ];
+        "bluez5.roles" = [ "a2dp_sink" "a2dp_source" ];
+    };
+  };
+
   # Enable touchpad support (enabled default in most desktopManager).
   # services.xserver.libinput.enable = true;
 
@@ -145,6 +157,8 @@
     ruff
     nodejs
     home-manager
+    bluez
+    bluez5
   ];
 
   programs.steam = {
@@ -161,6 +175,7 @@
   hardware.graphics = {
     enable = true;
   };
+
   # In /etc/nixos/configuration.nix
   virtualisation.docker = {
     enable = true;
@@ -212,8 +227,22 @@
 
   hardware.openrazer.enable = true;
 
-  hardware.bluetooth.enable = true; # enables support for Bluetooth
   hardware.bluetooth.powerOnBoot = true; # powers up the default Bluetooth controller on boot
+
+  hardware.bluetooth = {
+    enable = true;
+    settings = {
+      General = {
+        Name = "Hello";
+        ControllerMode = "dual";
+        FastConnectable = "true";
+        Experimental = "true";
+      };
+      Policy = {
+        AutoEnable = "true";
+      };
+    };
+  };
 
   programs.fish = {
     enable = true;
