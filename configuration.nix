@@ -160,6 +160,9 @@
     bluez5
     neovim
     lazygit
+    gcc
+    tmux
+    alacritty
   ];
 
   programs.steam = {
