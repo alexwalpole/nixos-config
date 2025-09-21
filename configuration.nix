@@ -159,6 +159,7 @@
     bluez
     bluez5
     neovim
+    lazygit
   ];
 
   programs.steam = {
