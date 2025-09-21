@@ -138,7 +138,6 @@
     git
     gh
     vim
-    vscode
     autokey
     steam
     nil
@@ -159,6 +158,7 @@
     home-manager
     bluez
     bluez5
+    neovim
   ];
 
   programs.steam = {
