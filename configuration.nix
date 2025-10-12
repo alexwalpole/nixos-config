@@ -264,7 +264,7 @@
       ur = "uv run";
 
       # unix
-      ls = "ls -Fog";
+      ls = "ls -Foga";
 
 
       # nixos
