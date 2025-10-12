@@ -7,6 +7,8 @@
   home.homeDirectory = "/home/alexw";
   imports = [
     ./home/alacritty.nix
+    
+    ./home/tmux.nix
   ];
 
   # This value determines the Home Manager release that your configuration is

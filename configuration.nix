@@ -273,6 +273,7 @@
       # TODO: make ./home.nix better
       nhs = "home-manager switch -f ./home.nix -b backup";
 
+      lg = "lazygit";
 
     };
   };
