@@ -8,6 +8,7 @@
   imports = [
     ./home/alacritty.nix
     
+    ./home/fish.nix
     ./home/tmux.nix
   ];
 
