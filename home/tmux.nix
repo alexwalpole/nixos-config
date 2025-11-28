@@ -11,6 +11,9 @@
 set -g base-index 1
 set -g mouse on
 
+set-option -g status-position top
+set -g set-titles on
+set -g set-titles-string "#S:#I.#P #W"
 
 # Nightfox colors for Tmux
 # Style: nightfox
