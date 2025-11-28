@@ -163,6 +163,7 @@
     gcc
     tmux
     alacritty
+    wezterm
   ];
 
   programs.steam = {
