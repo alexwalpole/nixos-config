@@ -164,6 +164,7 @@
     tmux
     alacritty
     wezterm
+    ghostty
   ];
 
   programs.steam = {

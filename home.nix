@@ -7,7 +7,7 @@
   home.homeDirectory = "/home/alexw";
   imports = [
     ./home/alacritty.nix
-    
+    ./home/nixvim.nix
     ./home/fish.nix
     ./home/tmux.nix
   ];
