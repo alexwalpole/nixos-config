@@ -1,10 +1,11 @@
-{ pkgs, lib, ... }:
+{ config, pkgs, lib, ... }:
 let
 nixvim = import (builtins.fetchGit {
     url = "https://github.com/nix-community/nixvim";
 # If you are not running an unstable channel of nixpkgs, select the corresponding branch of Nixvim.
 # ref = "nixos-25.05";
     });
+homeDir = config.home.homeDirectory;
 in
 {
   imports = [
@@ -47,7 +48,7 @@ in
       backup = false;
 # vim.opt.undodir = os.getenv("HOME") .. "/.vim/undodir"
 # Note: NixVim handles $HOME expansion naturally here.
-      # undodir = `os.getenv("HOME") .. "/.vim/undodir"`;
+      undodir   = "${homeDir}/.vim/undodir";
 # vim.opt.undofile = true
       undofile = true;
 
