@@ -47,7 +47,7 @@ in
       backup = false;
 # vim.opt.undodir = os.getenv("HOME") .. "/.vim/undodir"
 # Note: NixVim handles $HOME expansion naturally here.
-      undodir = "$HOME/.vim/undodir";
+      # undodir = `os.getenv("HOME") .. "/.vim/undodir"`;
 # vim.opt.undofile = true
       undofile = true;
 
@@ -93,8 +93,9 @@ in
     { # vim.keymap.set("n", "<leader>pv", vim.cmd.Ex)
       mode = "n";
       key = "<leader>pv";
-# TODO this sucsl      
-      action = ":Ex<CR>";
+      # action = ":Ex<CR>";
+      # TODO use mkRaw instead
+      action.__raw = "vim.cmd.Ex";
 # options.desc = "Open Netrw Explorer";
     }
 
@@ -218,13 +219,14 @@ in
       action = ":%s/\\<<C-r><C-w>\\>/<C-r><C-w>/gI<Left><Left><Left>";
       options.desc = "Substitute word under cursor";
     }
-    # undotree specific
-    #todo pull out into new file
+# undotree specific
+#todo pull out into new file
     {
 
-mode = "n";
-key = "<leader>u";
-action = 
+      mode = "n";
+      key = "<leader>u";
+      #TODO: figure out how to use mkRaw instead
+      action.__raw =  "vim.cmd.UndotreeToggle";
     }
     ];
 
