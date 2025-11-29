@@ -291,12 +291,15 @@ in
       mini-completion.enable = true;
       mini-statusline.enable = true;
 
-      # harpoon = {
-      #   enable = true;
-      #   settings = {
-      #     save_on_toggle = true;
-      #   };
-      # };
+      harpoon = {
+        enable = true;
+        settings = {
+          settings = {
+            save_on_toggle = true;
+            sync_on_ui_close = false;
+          };
+        };
+      };
     };
 
 
