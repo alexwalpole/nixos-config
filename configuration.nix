@@ -148,9 +148,12 @@
     discord
     ntfs3g
     # pkgs.gnome.gnome-tweaks
-    gnomeExtensions.hot-edge
-    gnomeExtensions.hide-top-bar
+    # gnomeExtensions.hot-edge
+    # gnomeExtensions.hide-top-bar
     gnomeExtensions.just-perfection
+    gnomeExtensions.system-monitor
+    # libgtop
+    # gnomeExtensions.astra-monitor
     uv
     python3
     ruff
@@ -158,7 +161,6 @@
     home-manager
     bluez
     bluez5
-    neovim
     lazygit
     gcc
     tmux
