@@ -286,6 +286,17 @@ in
       };
 
       undotree.enable = true;
+
+      mini-snippets.enable = true;
+      mini-completion.enable = true;
+      mini-statusline.enable = true;
+
+      # harpoon = {
+      #   enable = true;
+      #   settings = {
+      #     save_on_toggle = true;
+      #   };
+      # };
     };
 
 
