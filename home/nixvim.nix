@@ -12,6 +12,7 @@ in
 # For Home Manager
     nixvim.homeModules.nixvim
     ./nixvim/harpoon.nix
+    ./nixvim/lsp.nix
 # For NixOS
 # nixvim.nixosModules.nixvim
 # For nix-darwin
