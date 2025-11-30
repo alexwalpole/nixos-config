@@ -22,13 +22,13 @@
     systemd-boot = {
       enable = true;
       configurationLimit = 5; # bootmenu items
-      consoleMode = "max";
+        consoleMode = "max";
       windows = {
         "nvme0n1p1" = {
           title = "Windows 10";
-          # sudo blkid //check Windows ESP PARTUUID
-          # reboot to systemd-boot uefi shell and type: map
-          # find the FS alias match Windows ESP (ex: HD0a66666a2, HD0b, FS1, or BLK7)
+# sudo blkid //check Windows ESP PARTUUID
+# reboot to systemd-boot uefi shell and type: map
+# find the FS alias match Windows ESP (ex: HD0a66666a2, HD0b, FS1, or BLK7)
           efiDeviceHandle = "FS0";
           sortKey = "a_windows";
         };
@@ -37,19 +37,19 @@
   };
 
   networking.hostName = "nixos"; # Define your hostname.
-  # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
+# networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
 
-  # Configure network proxy if necessary
-  # networking.proxy.default = "http://user:password@proxy:port/";
-  # networking.proxy.noProxy = "127.0.0.1,localhost,internal.domain";
+# Configure network proxy if necessary
+# networking.proxy.default = "http://user:password@proxy:port/";
+# networking.proxy.noProxy = "127.0.0.1,localhost,internal.domain";
 
-  # Enable networking
-  networking.networkmanager.enable = true;
+# Enable networking
+    networking.networkmanager.enable = true;
 
-  # Set your time zone.
+# Set your time zone.
   time.timeZone = "America/New_York";
 
-  # Select internationalisation properties.
+# Select internationalisation properties.
   i18n.defaultLocale = "en_US.UTF-8";
 
   i18n.extraLocaleSettings = {
@@ -64,23 +64,23 @@
     LC_TIME = "en_US.UTF-8";
   };
 
-  # Enable the X11 windowing system.
+# Enable the X11 windowing system.
   services.xserver.enable = true;
 
-  # Enable the GNOME Desktop Environment.
+# Enable the GNOME Desktop Environment.
   services.xserver.displayManager.gdm.enable = true;
   services.xserver.desktopManager.gnome.enable = true;
 
-  # Configure keymap in X11
+# Configure keymap in X11
   services.xserver.xkb = {
     layout = "us";
     variant = "";
   };
 
-  # Enable CUPS to print documents.
+# Enable CUPS to print documents.
   services.printing.enable = true;
 
-  # Enable sound with pipewire.
+# Enable sound with pipewire.
   hardware.pulseaudio.enable = false;
   security.rtkit.enable = true;
   services.pipewire = {
@@ -88,30 +88,30 @@
     alsa.enable = true;
     alsa.support32Bit = true;
     pulse.enable = true;
-    # If you want to use JACK applications, uncomment this
-    #jack.enable = true;
+# If you want to use JACK applications, uncomment this
+#jack.enable = true;
 
-    # use the example session manager (no others are packaged yet so this is enabled by default,
-    # no need to redefine it in your config for now)
-    #media-session.enable = true;
+# use the example session manager (no others are packaged yet so this is enabled by default,
+# no need to redefine it in your config for now)
+#media-session.enable = true;
   };
 
   hardware.enableAllFirmware = true;
 
   services.pipewire.wireplumber.extraConfig.bluetoothEnhancements = {
     "monitor.bluez.properties" = {
-        "bluez5.enable-sbc-xq" = true;
-        "bluez5.enable-msbc" = false;
-        "bluez5.enable-hw-volume" = true;
-        "bluez5.auto-connect" = [ "a2dp_sink" ];
-        "bluez5.roles" = [ "a2dp_sink" "a2dp_source" ];
+      "bluez5.enable-sbc-xq" = true;
+      "bluez5.enable-msbc" = false;
+      "bluez5.enable-hw-volume" = true;
+      "bluez5.auto-connect" = [ "a2dp_sink" ];
+      "bluez5.roles" = [ "a2dp_sink" "a2dp_source" ];
     };
   };
 
-  # Enable touchpad support (enabled default in most desktopManager).
-  # services.xserver.libinput.enable = true;
+# Enable touchpad support (enabled default in most desktopManager).
+# services.xserver.libinput.enable = true;
 
-  # Define a user account. Don't forget to set a password with ‘passwd’.
+# Define a user account. Don't forget to set a password with ‘passwd’.
   users.users.alexw = {
     name = "alexw";
     home = "/home/alexw";
@@ -125,14 +125,14 @@
 
   home-manager.backupFileExtension = "backup";
 
-  # Install firefox.
+# Install firefox.
   programs.firefox.enable = true;
 
-  # Allow unfree packages
+# Allow unfree packages
   nixpkgs.config.allowUnfree = true;
 
-  # List packages installed in system profile. To search, run:
-  # $ nix search wget
+# List packages installed in system profile. To search, run:
+# $ nix search wget
   environment.systemPackages = with pkgs; [
     wget
     git
@@ -167,6 +167,8 @@
     alacritty
     wezterm
     ghostty
+
+    (llama-cpp.override { cudaSupport = true; })
   ];
 
   programs.steam = {
