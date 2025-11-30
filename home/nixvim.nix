@@ -11,6 +11,7 @@ in
   imports = [
 # For Home Manager
     nixvim.homeModules.nixvim
+    ./nixvim/harpoon.nix
 # For NixOS
 # nixvim.nixosModules.nixvim
 # For nix-darwin
@@ -291,15 +292,6 @@ in
       mini-completion.enable = true;
       mini-statusline.enable = true;
 
-      harpoon = {
-        enable = true;
-        settings = {
-          settings = {
-            save_on_toggle = true;
-            sync_on_ui_close = false;
-          };
-        };
-      };
     };
 
 
