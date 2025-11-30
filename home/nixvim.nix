@@ -15,6 +15,9 @@ in
     ./nixvim/lsp.nix
     ./nixvim/fugitive.nix
     ./nixvim/telescope.nix
+    ./nixvim/undotree.nix
+    ./nixvim/gitblame.nix
+    ./nixvim/tiny-inline-diagnostic.nix
 # For NixOS
 # nixvim.nixosModules.nixvim
 # For nix-darwin
@@ -25,6 +28,15 @@ in
 
 
   programs.nixvim = {
+    colorschemes.tokyonight.enable = true ;
+    extraConfigLua = ''
+      vim.cmd("highlight! link SignColumn Normal")
+
+      vim.api.nvim_set_hl(0, "Normal", { bg = "none" })
+      vim.api.nvim_set_hl(0, "NormalFloat", { bg = "none" })
+      vim.api.nvim_set_hl(0, "NormalNC", { bg = "none" })
+      vim.api.nvim_set_hl(0, "NormalSB", { bg = "none" })
+      '';
     opts = {
       number = true;
       relativenumber = true;
@@ -224,19 +236,15 @@ in
       action = ":%s/\\<<C-r><C-w>\\>/<C-r><C-w>/gI<Left><Left><Left>";
       options.desc = "Substitute word under cursor";
     }
-# undotree specific
-#todo pull out into new file
     {
-
-      mode = "n";
-      key = "<leader>u";
-      #TODO: figure out how to use mkRaw instead
-      action.__raw =  "vim.cmd.UndotreeToggle";
+      mode = "i";
+      key = "(<CR>";
+      action = "(<CR>)<C-c>O";
     }
     ];
 
     plugins = {
-      lualine.enable = true;
+      # lualine.enable = true;
       treesitter = {
         enable = true;
 
@@ -289,12 +297,13 @@ in
 
       };
 
-      undotree.enable = true;
+
 
       mini-snippets.enable = true;
       mini-completion.enable = true;
       mini-statusline.enable = true;
-      gitblame.enable = true;
+      vim-surround.enable = true;
+      # copilot-vim.enable = true;
 
     };
 
