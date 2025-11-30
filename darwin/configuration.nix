@@ -12,6 +12,8 @@
       fish
       tmux
       home-manager
+      bat
+      lazygit
     ];
 
   home-manager.backupFileExtension = "backup";

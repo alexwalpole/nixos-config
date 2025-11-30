@@ -10,6 +10,7 @@
     ./home/nixvim.nix
     ./home/fish.nix
     ./home/tmux.nix
+    ./home/lazygit.nix
   ];
 
   # This value determines the Home Manager release that your configuration is
