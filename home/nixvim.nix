@@ -13,6 +13,8 @@ in
     nixvim.homeModules.nixvim
     ./nixvim/harpoon.nix
     ./nixvim/lsp.nix
+    ./nixvim/fugitive.nix
+    ./nixvim/telescope.nix
 # For NixOS
 # nixvim.nixosModules.nixvim
 # For nix-darwin
@@ -292,6 +294,7 @@ in
       mini-snippets.enable = true;
       mini-completion.enable = true;
       mini-statusline.enable = true;
+      gitblame.enable = true;
 
     };
 
