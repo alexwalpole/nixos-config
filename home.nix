@@ -11,6 +11,7 @@
     ./home/fish.nix
     ./home/tmux.nix
     ./home/lazygit.nix
+    ./home/ghostty.nix
   ];
 
   # This value determines the Home Manager release that your configuration is
@@ -77,7 +78,6 @@
   #  /etc/profiles/per-user/alexw/etc/profile.d/hm-session-vars.sh
   #
   home.sessionVariables = {
-    # EDITOR = "emacs";
     EDITOR = "nvim";
   };
 
