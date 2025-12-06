@@ -28,7 +28,7 @@ in
 
   options.nixvim = {
     theme = pkgs.lib.mkOption {
-      type = pkgs.lib.types.enum [ "tokyonight" "catppuccin" "nightfox" "rose-pine" ];
+      type = pkgs.lib.types.enum [ "tokyonight" "catppuccin" "nightfox" "rose-pine" "kanagawa"];
       default = "tokyonight";
       description = "Theme for Nixvim.";
     };
@@ -42,6 +42,7 @@ in
       colorschemes.catppuccin.enable = lib.mkIf (config.nixvim.theme == "catppuccin") true;
       colorschemes.nightfox.enable = lib.mkIf (config.nixvim.theme == "nightfox") true;
       colorschemes.rose-pine.enable = lib.mkIf (config.nixvim.theme == "rose-pine") true;
+      colorschemes.kanagawa.enable = lib.mkIf (config.nixvim.theme == "kanagawa") true;
       
       
       extraConfigLua = ''
