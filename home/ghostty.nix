@@ -3,7 +3,7 @@ let
   themeArgToGhosttyTheme = {
     tokyonight = "tokyonight";
     catpuccin-mocha = "Catppuccin Mocha";
-    catpuccin = "Catppuccin Mocha";
+    catppuccin = "Catppuccin Mocha";
     nightfox = "nightfox";
     rose-pine = "Rose Pine";
   };
