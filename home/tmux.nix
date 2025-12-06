@@ -1,6 +1,19 @@
 { pkgs, config, ...}:
 let
 
+  tokyonight-tmux = pkgs.tmuxPlugins.mkTmuxPlugin 
+    {
+      pluginName = "tokyo-night-tmux";
+      rtpFilePath = "tokyo-night.tmux";
+      version = "1.0.0";
+      src = pkgs.fetchFromGitHub {
+        owner = "janoamaral";
+        repo = "tokyo-night-tmux";
+        # rev = "v1.0.0";
+        rev = "caf6cbb4c3a32d716dfedc02bc63ec8cf238f632";
+        sha256 = "sha256-TOS9+eOEMInAgosB3D9KhahudW2i1ZEH+IXEc0RCpU0=";
+      };
+    };
 
   extraConfig = ''
 set -g base-index 1
@@ -37,6 +50,7 @@ set -g set-titles-string "#S:#I.#P #W"
    themeToConfig = {
     nightfox = nightFoxThemeConfig;
     catppuccin = ""; 
+    tokyonight = "";
    };
 in
 {
@@ -53,7 +67,6 @@ in
       enable = true;
       shell = "${pkgs.fish}/bin/fish";
       terminal = "tmux-256color";
-# extraConfig = extraConfig + (if theme == "nightfox" then nightFoxThemeConfig else "");
       extraConfig = extraConfig + (themeToConfig.${config.tmux.theme} or "");
       plugins = with pkgs;  lib.optionals (config.tmux.theme == "catppuccin") [
        { 
@@ -63,6 +76,10 @@ in
             set -g @catppuccin_window_tabs_enabled on
             set -g @catppuccin_date_time "%H:%M"
           '';
+        }
+      ] ++ lib.optionals (config.tmux.theme == "tokyonight") [
+        {
+          plugin = tokyonight-tmux;
         }
       ];
     };

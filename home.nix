@@ -14,9 +14,9 @@
     # ./home/lazygit.nix
   ];
 
-  # tmux.theme = "nightfox";
-  ghostty.theme = "rose-pine";
-  nixvim.theme = "rose-pine";
+  tmux.theme = "catppuccin";
+  ghostty.theme = "tokyonight";
+  nixvim.theme = "tokyonight";
   # This value determines the Home Manager release that your configuration is
   # compatible with. This helps avoid breakage when a new Home Manager release
   # introduces backwards incompatible changes.
