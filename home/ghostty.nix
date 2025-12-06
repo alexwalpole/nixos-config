@@ -1,8 +1,18 @@
 { pkgs, config, ...}:
+let 
+  themeArgToGhosttyTheme = {
+    tokyonight = "tokyonight";
+    catpuccin-mocha = "Catppuccin Mocha";
+    catpuccin = "Catppuccin Mocha";
+    nightfox = "nightfox";
+    rose-pine = "Rose Pine";
+  };
+
+in
 {
   options.ghostty = {
     theme = pkgs.lib.mkOption {
-      type = pkgs.lib.types.enum [ "tokyonight" "Catppuccin Mocha" "nightfox" "Rose Pine" ];
+      type = pkgs.lib.types.enum ( builtins.attrNames themeArgToGhosttyTheme );
       default = "tokyonight";
       description = "Theme for Ghostty terminal.";
     };
@@ -14,7 +24,7 @@
 
       enableFishIntegration = true;
       settings = {
-        theme = config.ghostty.theme;
+        theme = themeArgToGhosttyTheme.${config.ghostty.theme};
         shell-integration = "fish";
         shell-integration-features = true;
         window-height = 40;
