@@ -11,7 +11,6 @@
     programs.ghostty = {
 
       enable = true;
-      package = pkgs.emptyDirectory;
 
       enableFishIntegration = true;
       settings = {
