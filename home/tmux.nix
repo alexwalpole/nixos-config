@@ -1,6 +1,6 @@
 { pkgs, config, ...}:
-# let tmux-super-fingers = 
 let
+
 
   extraConfig = ''
 set -g base-index 1
@@ -36,6 +36,7 @@ set -g set-titles-string "#S:#I.#P #W"
     '';
    themeToConfig = {
     nightfox = nightFoxThemeConfig;
+    catppuccin = ""; 
    };
 in
 {
@@ -54,6 +55,16 @@ in
       terminal = "tmux-256color";
 # extraConfig = extraConfig + (if theme == "nightfox" then nightFoxThemeConfig else "");
       extraConfig = extraConfig + (themeToConfig.${config.tmux.theme} or "");
+      plugins = with pkgs;  lib.optionals (config.tmux.theme == "catppuccin") [
+       { 
+          plugin = tmuxPlugins.catppuccin;
+          extraConfig = '' 
+            set -g @catppuccin_flavour 'mocha'
+            set -g @catppuccin_window_tabs_enabled on
+            set -g @catppuccin_date_time "%H:%M"
+          '';
+        }
+      ];
     };
   };
 }
