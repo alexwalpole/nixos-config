@@ -1,5 +1,6 @@
-{ config, pkgs, ... }:
-
+let
+  theme = "kanagawa";
+in
 {
   # Home Manager needs a bit of information about you and the paths it should
   # manage.
@@ -14,9 +15,9 @@
     # ./home/lazygit.nix
   ];
 
-  tmux.theme = "catppuccin";
-  ghostty.theme = "tokyonight";
-  nixvim.theme = "tokyonight";
+  tmux.theme = theme;
+  ghostty.theme = theme;
+  nixvim.theme = theme;
   # This value determines the Home Manager release that your configuration is
   # compatible with. This helps avoid breakage when a new Home Manager release
   # introduces backwards incompatible changes.

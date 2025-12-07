@@ -51,6 +51,7 @@ set -g set-titles-string "#S:#I.#P #W"
     nightfox = nightFoxThemeConfig;
     catppuccin = ""; 
     tokyonight = "";
+    kanagawa = "";
    };
 in
 {
@@ -80,6 +81,10 @@ in
       ] ++ lib.optionals (config.tmux.theme == "tokyonight") [
         {
           plugin = tokyonight-tmux;
+        }
+      ] ++ lib.optionals (config.tmux.theme == "kanagawa") [
+        {
+          plugin = tmuxPlugins.kanagawa;
         }
       ];
     };
