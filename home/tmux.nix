@@ -65,6 +65,7 @@ in
   config = {
     programs.tmux = {
 
+      tmuxp.enable = true;
       enable = true;
       shell = "${pkgs.fish}/bin/fish";
       terminal = "tmux-256color";
