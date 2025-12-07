@@ -3,11 +3,10 @@
     enable = true;
     settings = {
       git = {
-        pagers = [
+        paging = 
           {
             pager = "delta --dark --paging=never --line-numbers --hyperlinks --hyperlinks-file-link-format=\"lazygit-edit://{path}:{line}\"";
-          }
-        ];
+          };
         mainBranches = [
           "master"
           "main"

@@ -13,7 +13,7 @@ in
     ./home/fish.nix
     ./home/tmux.nix
     ./home/ghostty.nix
-    # ./home/lazygit.nix
+    ./home/lazygit.nix
   ];
 
   tmux.theme = theme;
@@ -49,6 +49,7 @@ in
     # '')
     bat
     btop
+    delta
   ];
 
   nixpkgs.config.allowUnfree = true;
