@@ -14,6 +14,7 @@
       home-manager
       bat
       lazygit
+      terminal-notifier
     ];
 
   home-manager.backupFileExtension = "backup";
