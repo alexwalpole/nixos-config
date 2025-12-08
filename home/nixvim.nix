@@ -206,10 +206,21 @@ in
         action = ":%s/\\<<C-r><C-w>\\>/<C-r><C-w>/gI<Left><Left><Left>";
         options.desc = "Substitute word under cursor";
       }
+      # {
+      #   mode = "i";
+      #   key = "(<CR>";
+      #   action = "(<CR>)<C-c>O";
+      # }
       {
-        mode = "i";
-        key = "(<CR>";
-        action = "(<CR>)<C-c>O";
+        mode = "n";
+        key = "<leader>yf";
+        action.__raw = ''
+          function()
+            local filepath = vim.fn.expand("%:p")
+            vim.fn.setreg("+", filepath)
+          end
+        '';
+        options.desc = "yank relative file path to system clipboard";
       }
       ];
 
