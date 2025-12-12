@@ -2,10 +2,15 @@
 let
 nixvim = import (builtins.fetchGit {
     url = "https://github.com/nix-community/nixvim";
-# If you are not running an unstable channel of nixpkgs, select the corresponding branch of Nixvim.
-# ref = "nixos-25.05";
+# If you are not running an unstable channel of nixpkgs, select the corresponding branch of Nixvim
+    # ref = "nixos-25.05";
     });
 homeDir = config.home.homeDirectory;
+# thing = lib.nixvim.plugins.mkNeovimPlugin {
+#   name = "vim-closer";
+#   maintaners = with lib.maintainers; [ rstacruz ];
+#   url = "https://github.com/rstacruz/vim-closer";
+# };
 in
 {
   imports = [
@@ -20,6 +25,7 @@ in
     ./nixvim/tiny-inline-diagnostic.nix
     ./nixvim/treesitter.nix
     ./nixvim/treesitter-context.nix
+    # ./nixvim/vim-closer.nix
     # For NixOS
     # nixvim.nixosModules.nixvim
     # For nix-darwin
@@ -223,8 +229,9 @@ in
         options.desc = "yank relative file path to system clipboard";
       }
       ];
-
       plugins = {
+
+        # vim-closer.enable = true;
         lualine.enable = true;
 # mini-indentscope.enable = true;
         mini-snippets.enable = true;
