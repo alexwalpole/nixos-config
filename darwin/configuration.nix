@@ -15,6 +15,7 @@
       bat
       lazygit
       terminal-notifier
+      direnv
     ];
 
   home-manager.backupFileExtension = "backup";

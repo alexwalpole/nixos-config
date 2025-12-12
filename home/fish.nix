@@ -63,6 +63,7 @@
 
         set fish_greeting wassssupp
         set -gx EDITOR nvim
+        direnv hook fish | source
         '';
 
     };
