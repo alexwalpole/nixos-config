@@ -67,7 +67,7 @@ in
 
       tmuxp.enable = true;
       enable = true;
-      shell = "${pkgs.fish}/bin/fish";
+      shell = "${config.home.profileDirectory}/bin/fish";
       terminal = "tmux-256color";
       extraConfig = extraConfig + (themeToConfig.${config.tmux.theme} or "");
       plugins = with pkgs;  lib.optionals (config.tmux.theme == "catppuccin") [
