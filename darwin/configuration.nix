@@ -6,14 +6,11 @@
   # $ nix-env -qaP | grep wget
   environment.systemPackages = with pkgs;
     [ vim
-      neovim
       wget
       git
       fish
-      tmux
       home-manager
       bat
-      lazygit
       terminal-notifier
       direnv
     ];
