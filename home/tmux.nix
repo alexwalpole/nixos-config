@@ -50,7 +50,10 @@ set -g set-titles-string "#S:#I.#P #W"
    themeToConfig = {
     nightfox = nightFoxThemeConfig;
     catppuccin = ""; 
-    tokyonight = "";
+    tokyonight = ''
+      set -g @tokyo-night-tmux_show_music 0
+      set -g @tokyo-night-tmux_show_netspeed 0
+    '';
     kanagawa = "";
    };
 in

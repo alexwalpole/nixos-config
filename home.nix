@@ -1,6 +1,6 @@
 { pkgs, ...}:
 let
-  theme = "kanagawa";
+  theme = "tokyonight";
 in
 {
   # Home Manager needs a bit of information about you and the paths it should
@@ -14,6 +14,7 @@ in
     ./home/ghostty.nix
     ./home/lazygit.nix
   ];
+
 
   tmux.theme = theme;
   ghostty.theme = theme;
