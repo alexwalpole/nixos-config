@@ -231,6 +231,7 @@ in
       ];
       plugins = {
 
+	      web-devicons.enable = true;
         # vim-closer.enable = true;
         lualine.enable = true;
 # mini-indentscope.enable = true;
