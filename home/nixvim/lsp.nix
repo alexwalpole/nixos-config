@@ -30,6 +30,12 @@
             '';
       options.desc = "Rename symbol";
     }
+    {
+      mode = "n";
+      key = "<leader>ca";
+      action.__raw = ''function() vim.lsp.buf.code_action({ context = { only = { "source" } } } ) end'';
+      options.desc = "Code action source";
+    }
     ];
 
     plugins = {
