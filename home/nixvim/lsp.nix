@@ -36,7 +36,15 @@
       action.__raw = ''function() vim.lsp.buf.code_action({ context = { only = { "source" } } } ) end'';
       options.desc = "Code action source";
     }
+    {
+      # I thought this was the default but apparently i have to set it myself
+      mode = "n";
+      key = "gd";
+      action = "<cmd>lua vim.lsp.buf.definition()<CR>";
+      options.desc = "Go to definition";
+    }
     ];
+
 
     plugins = {
       lsp = {
@@ -45,7 +53,7 @@
           nixd = {
             enable = true;
           };
-          ts_ls.enable = true;
+          # ts_ls.enable = true;
           eslint.enable = true;
           lua_ls.enable = true;
         };
