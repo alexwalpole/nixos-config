@@ -3,8 +3,6 @@
     enable = true;
     settings = {
       enable = true;
-      # Enable this plugin (Can be enabled/disabled later via commands)
-
       multiwindow = false;
       # Enable multiwindow support.
       max_lines = 5;
