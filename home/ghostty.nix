@@ -31,7 +31,7 @@ in
         window-height = 40;
         window-width = 140;
         font-size = 24;
-        command = "${pkgs.fish}/bin/fish --login --interactive";
+        command = "${config.home.profileDirectory}/bin/fish --login --interactive";
 # shell
 
 # # theme = Catppuccin Mocha
