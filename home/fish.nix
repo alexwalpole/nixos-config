@@ -5,7 +5,12 @@
 
       enable = true;
 
-
+      plugins =[
+      {
+        src = pkgs.fishPlugins.nvm.src;
+        name = "nvm";
+      }
+      ];
       functions = {
         fish_right_prompt = ''
           set -l node_version (node --version)
@@ -47,7 +52,7 @@
 
       };
       shellInit = ''
-        # use term colors for fish
+# use term colors for fish
         set fish_color_normal normal
         set fish_color_command --bold
         set fish_color_param cyan
@@ -63,6 +68,11 @@
 
         set fish_greeting wassssupp
         set -gx EDITOR nvim
+        '';
+# https://github.com/nix-community/home-manager/issues/6568#issuecomment-3111733446
+      loginShellInit = pkgs.lib.optionalString pkgs.stdenv.isAarch64 ''
+        source /nix/var/nix/profiles/default/etc/profile.d/nix-daemon.fish
+        fish_add_path /run/current-system/sw/bin/
         direnv hook fish | source
         '';
 
