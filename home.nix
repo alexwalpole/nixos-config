@@ -50,6 +50,7 @@ in
     bat
     btop
     delta
+    ripgrep
   ];
 
   nixpkgs.config.allowUnfree = true;
