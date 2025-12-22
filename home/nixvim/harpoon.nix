@@ -3,7 +3,7 @@
     keymaps = [
     {
       mode = "n";
-      key =    "<leader>a";
+      key = "<leader>a";
       action.__raw = "function() require('harpoon'):list():add() end";
 
       options.desc = "Add to harpoon";
@@ -11,7 +11,7 @@
     }
     {
       mode = "n";
-      key =    "<C-e>";
+      key = "<C-e>";
       action.__raw = "function() require('harpoon').ui:toggle_quick_menu(require('harpoon'):list()) end";
     }
     {
