@@ -12,7 +12,6 @@
     {
       mode = "n";
       key = "<C-p>";
-      # The raw action calls the require('telescope.builtin').git_files() function
       action.__raw = "function() require('telescope.builtin').git_files() end";
       options.desc = "Telescope git files";
     }
@@ -35,5 +34,30 @@
   ];
 
   plugins.telescope.enable = true;
-};
+
+  plugins.telescope = {
+    extensions = {
+      ui_select = {
+        enable = true;
+      };
+    };
+    # luaConfig.post = ''
+    #   local builtin = require('telescope.builtin')
+    #   builtin.lsp_references( { fname_width = 60 } )
+    #   builtin.git_files( { fname_width = 60 } )
+    #   builtin.find_files( { fname_width = 60 } )
+    # '';
+    settings.pickers = {
+      find_files = {
+        fname_width = 60;
+      };
+      git_files = {
+        fname_width = 60;
+      };
+      lsp_references = {
+        fname_width = 60;
+      };
+    };
+  };
+ };
 }
