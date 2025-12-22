@@ -103,7 +103,7 @@ in
       { 
         mode = "n";
         key = "<leader>pv";
-# TODO use mkRaw instead
+        # TODO use mkRaw instead
         action.__raw = "vim.cmd.Ex";
         options.desc = "Open Netrw Explorer";
       }
@@ -140,7 +140,7 @@ in
         options.desc = "Scroll half-page up (center)";
       }
 
-# Search (Center search terms)
+      # Search (Center search terms)
       {
         mode = "n";
         key = "n";
@@ -239,7 +239,8 @@ in
         mini-completion.enable = true;
 # mini-statusline.enable = true;
         vim-surround.enable = true;
-# copilot-vim.enable = true;
+        copilot-vim.enable = true;
+        typescript-tools.enable = true;
 
       };
 
