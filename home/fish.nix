@@ -13,10 +13,9 @@
       ];
       functions = {
         fish_right_prompt = ''
+          set -l node_version ""
           if command -q node
-            set -l node_version (node --version)
-          else 
-            set -l node_version ""
+            set node_version (node --version)
           end
 
           set -l statuscolor (set_color -o $fish_color_end)
