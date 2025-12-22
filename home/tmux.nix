@@ -22,7 +22,13 @@ set -g mouse on
 set-option -g status-position top
 set -g set-titles on
 set -g set-titles-string "#S:#I.#P #W"
+set -g status-style bg=default,fg=default
+set -g window-status-current-style fg=blue,bg=default,bold
+set -g status-left-length 50
+set -g status-left-style "bg=blue,fg=black"
+
 '';
+# set -g status-left "#[bg=blue,fg=black] #S #[default]   "
   nightFoxThemeConfig = ''
 # Nightfox colors for Tmux
 # Style: nightfox
@@ -72,25 +78,7 @@ in
       enable = true;
       shell = "${config.home.profileDirectory}/bin/fish";
       terminal = "tmux-256color";
-      extraConfig = extraConfig + (themeToConfig.${config.tmux.theme} or "");
-      plugins = with pkgs;  lib.optionals (config.tmux.theme == "catppuccin") [
-       { 
-          plugin = tmuxPlugins.catppuccin;
-          extraConfig = '' 
-            set -g @catppuccin_flavour 'mocha'
-            set -g @catppuccin_window_tabs_enabled on
-            set -g @catppuccin_date_time "%H:%M"
-          '';
-        }
-      ] ++ lib.optionals (config.tmux.theme == "tokyonight") [
-        {
-          plugin = tokyonight-tmux;
-        }
-      ] ++ lib.optionals (config.tmux.theme == "kanagawa") [
-        {
-          plugin = tmuxPlugins.kanagawa;
-        }
-      ];
+      extraConfig = extraConfig ;
     };
   };
 }
