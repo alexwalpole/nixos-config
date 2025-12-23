@@ -54,9 +54,25 @@
             enable = true;
           };
           # ts_ls.enable = true;
-          eslint.enable = true;
+          eslint = {
+            enable = true;
+            extraOptions = {
+              on_attach.__raw = ''
+                function(client, bufnr)
+                  eslint_base_on_attach(client, bufnr)
+                  vim.api.nvim_create_autocmd('BufWritePre', {
+                      buffer = bufnr,
+                      command = 'LspEslintFixAll',
+                      })
+                end
+              '';
+            };
+          };
           lua_ls.enable = true;
         };
+        preConfig = ''
+          local eslint_base_on_attach = vim.lsp.config.eslint.on_attach
+        '';
       };
     };
 
