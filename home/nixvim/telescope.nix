@@ -31,22 +31,21 @@
       action.__raw = "function() require('telescope.builtin').lsp_references() end";
       options.desc = "Telescope LSP references";
     }
+    {
+      mode = "n";
+      key = "<leader>rg";
+      action.__raw = "function() require('telescope').extensions.live_grep_args.live_grep_args() end";
+    }
   ];
 
   plugins.telescope.enable = true;
 
   plugins.telescope = {
     extensions = {
-      ui_select = {
-        enable = true;
-      };
+      ui-select.enable = true;
+      live-grep-args.enable = true;
+      frecency.enable = true;
     };
-    # luaConfig.post = ''
-    #   local builtin = require('telescope.builtin')
-    #   builtin.lsp_references( { fname_width = 60 } )
-    #   builtin.git_files( { fname_width = 60 } )
-    #   builtin.find_files( { fname_width = 60 } )
-    # '';
     settings.pickers = {
       find_files = {
         fname_width = 60;
