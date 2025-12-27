@@ -240,7 +240,7 @@ in
 # mini-statusline.enable = true;
         vim-surround.enable = true;
         copilot-vim.enable = true;
-        typescript-tools.enable = true;
+        # typescript-tools.enable = true;
 
       };
 

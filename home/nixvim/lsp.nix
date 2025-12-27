@@ -53,7 +53,7 @@
           nixd = {
             enable = true;
           };
-          # ts_ls.enable = true;
+          tsgo.enable = true;
           eslint = {
             enable = true;
             extraOptions = {
