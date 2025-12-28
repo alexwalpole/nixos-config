@@ -50,10 +50,10 @@
       lsp = {
         enable = true;
         servers = {
-          nixd = {
-            enable = true;
-          };
+          nixd.enable = true;
+          fish_lsp.enable = true;
           tsgo.enable = true;
+
           eslint = {
             enable = true;
             extraOptions = {
