@@ -13,6 +13,8 @@ in
     ./home/tmux.nix
     ./home/ghostty.nix
     ./home/lazygit.nix
+    ./home/git.nix
+
   ];
 
 
