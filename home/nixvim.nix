@@ -1,16 +1,16 @@
 { config, pkgs, lib, ... }:
 let
-nixvim = import (builtins.fetchGit {
-    url = "https://github.com/nix-community/nixvim";
-# If you are not running an unstable channel of nixpkgs, select the corresponding branch of Nixvim
-    # ref = "nixos-25.05";
-    });
-homeDir = config.home.homeDirectory;
-# thing = lib.nixvim.plugins.mkNeovimPlugin {
-#   name = "vim-closer";
-#   maintaners = with lib.maintainers; [ rstacruz ];
-#   url = "https://github.com/rstacruz/vim-closer";
-# };
+  nixvim = import (builtins.fetchGit {
+      url = "https://github.com/nix-community/nixvim";
+  # If you are not running an unstable channel of nixpkgs, select the corresponding branch of Nixvim
+      # ref = "nixos-25.05";
+      });
+  homeDir = config.home.homeDirectory;
+  # thing = lib.nixvim.plugins.mkNeovimPlugin {
+  #   name = "vim-closer";
+  #   maintaners = with lib.maintainers; [ rstacruz ];
+  #   url = "https://github.com/rstacruz/vim-closer";
+  # };
 in
 {
   imports = [
@@ -234,14 +234,10 @@ in
 	      web-devicons.enable = true;
         # vim-closer.enable = true;
         lualine.enable = true;
-# mini-indentscope.enable = true;
         mini-snippets.enable = true;
         mini-completion.enable = true;
-# mini-statusline.enable = true;
         vim-surround.enable = true;
         copilot-vim.enable = true;
-        # typescript-tools.enable = true;
-
       };
 
       nixpkgs.config.allowUnfreePredicate = pkg: builtins.elem (lib.getName pkg) [
