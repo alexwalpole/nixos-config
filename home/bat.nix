@@ -21,6 +21,15 @@
           };
           file = "extras/sublime/tokyonight_night.tmTheme";
         };
+        kanagawa = {
+          src = pkgs.fetchFromGitHub {
+            owner = "rebelot";
+            repo = "kanagawa.nvim";
+            rev = "master"; 
+            sha256 = "sha256-nHcQWTX4x4ala6+fvh4EWRVcZMNk5jZiZAwWhw03ExE=";
+          };
+          file = "extras/tmTheme/kanagawa.tmTheme";
+        };
       };
 
       config = {
