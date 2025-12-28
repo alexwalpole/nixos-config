@@ -1,5 +1,5 @@
-{ pkgs, config, ...}:
-let 
+{ pkgs, config, ... }:
+let
   themeArgToGhosttyTheme = {
     tokyonight = "tokyonight";
     catpuccin-mocha = "Catppuccin Mocha";
@@ -13,7 +13,7 @@ in
 {
   options.ghostty = {
     theme = pkgs.lib.mkOption {
-      type = pkgs.lib.types.enum ( builtins.attrNames themeArgToGhosttyTheme );
+      type = pkgs.lib.types.enum (builtins.attrNames themeArgToGhosttyTheme);
       default = "tokyonight";
       description = "Theme for Ghostty terminal.";
     };
@@ -32,23 +32,23 @@ in
         window-width = 140;
         font-size = 24;
         command = "${config.home.profileDirectory}/bin/fish --login --interactive";
-# shell
+        # shell
 
-# # theme = Catppuccin Mocha
-# # theme = Nightfox
-# # theme = Rose Pine
-# theme = TokyoNight Night
-# # window-decoration = none
-#
-#
-# shell-integration = fish
-# shell-integration-features = true
-# command = /opt/homebrew/bin/fish --login --interactive
-# window-height = 40
-# window-width = 140
-#
-#
-# font-size = 24
+        # # theme = Catppuccin Mocha
+        # # theme = Nightfox
+        # # theme = Rose Pine
+        # theme = TokyoNight Night
+        # # window-decoration = none
+        #
+        #
+        # shell-integration = fish
+        # shell-integration-features = true
+        # command = /opt/homebrew/bin/fish --login --interactive
+        # window-height = 40
+        # window-width = 140
+        #
+        #
+        # font-size = 24
 
       };
     };

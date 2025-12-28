@@ -1,15 +1,15 @@
-{ pkgs, ...}:
+{ pkgs, ... }:
 {
   config = {
     programs.fish = {
 
       enable = true;
 
-      plugins =[
-      {
-        src = pkgs.fishPlugins.nvm.src;
-        name = "nvm";
-      }
+      plugins = [
+        {
+          src = pkgs.fishPlugins.nvm.src;
+          name = "nvm";
+        }
       ];
       functions = {
         fish_right_prompt = ''
@@ -21,18 +21,17 @@
           set -l statuscolor (set_color -o $fish_color_end)
           set -l node_version "$statuscolor$node_version"
           echo -n -s $node_version 
-          '';
+        '';
 
         branch_diff = ''
           git log ( echo $argv[2] || echo 'main' )..(echo $argv[1]) --full-diff -p
         '';
       };
 
-
       shellAbbrs = {
-        gcm  = "git commit -m";
+        gcm = "git commit -m";
         gcob = "git checkout -b";
-        gco  = "git checkout";
+        gco = "git checkout";
         gst = "git status";
         gstsh = "git stash";
 
@@ -76,13 +75,13 @@
 
         set fish_greeting wassssupp
         set -gx EDITOR nvim
-        '';
+      '';
       # https://github.com/nix-community/home-manager/issues/6568#issuecomment-3111733446
       loginShellInit = pkgs.lib.optionalString pkgs.stdenv.isAarch64 ''
         source /nix/var/nix/profiles/default/etc/profile.d/nix-daemon.fish
         fish_add_path /run/current-system/sw/bin/
         direnv hook fish | source
-        '';
+      '';
 
     };
   };

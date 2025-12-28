@@ -1,4 +1,4 @@
-{ pkgs, ...}:
+{ pkgs, ... }:
 let
   theme = "tokyonight";
 in
@@ -16,7 +16,6 @@ in
     ./home/git.nix
     ./home/bat.nix
   ];
-
 
   tmux.theme = theme;
   ghostty.theme = theme;
@@ -54,6 +53,8 @@ in
     btop
     delta
     ripgrep
+    nixfmt-rfc-style
+    nixfmt-tree
   ];
 
   nixpkgs.config.allowUnfree = true;
@@ -95,6 +96,5 @@ in
 
   # Let Home Manager install and manage itself.
   programs.home-manager.enable = true;
-
 
 }

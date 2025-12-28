@@ -4,15 +4,15 @@
   imports = [ <home-manager/nix-darwin> ];
   # List packages installed in system profile. To search by name, run:
   # $ nix-env -qaP | grep wget
-  environment.systemPackages = with pkgs;
-    [ vim
-      wget
-      git
-      fish
-      home-manager
-      terminal-notifier
-      direnv
-    ];
+  environment.systemPackages = with pkgs; [
+    vim
+    wget
+    git
+    fish
+    home-manager
+    terminal-notifier
+    direnv
+  ];
 
   home-manager.backupFileExtension = "backup";
 

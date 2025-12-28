@@ -5,10 +5,10 @@
     userName = "Alex Walpole";
     userEmail = "alexcwalpole@gmail.com";
     ignores = [ ".DS_Store" ];
-    
-    delta = { 
+
+    delta = {
       enable = true;
-      options = { 
+      options = {
         navigate = true;
         line-numbers = true;
         # This depends on the bat theme being set up...
@@ -17,4 +17,3 @@
     };
   };
 }
-

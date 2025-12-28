@@ -3,7 +3,7 @@
   imports = [
     ../home.nix
   ];
-  # ghostty isn't available in nixpkgs for darwin yet :/  
+  # ghostty isn't available in nixpkgs for darwin yet :/
   programs.ghostty.package = pkgs.emptyDirectory;
 
   home.username = lib.mkForce "alexwalpole";
