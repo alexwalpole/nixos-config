@@ -14,7 +14,7 @@ in
     ./home/ghostty.nix
     ./home/lazygit.nix
     ./home/git.nix
-
+    ./home/bat.nix
   ];
 
 

@@ -10,7 +10,6 @@
       git
       fish
       home-manager
-      bat
       terminal-notifier
       direnv
     ];
