@@ -36,6 +36,16 @@
           };
           file = "extras/tmTheme/kanagawa.tmTheme";
         };
+        rose-pine = {
+          src = pkgs.fetchFromGitHub {
+            owner = "rose-pine";
+            repo = "tm-theme";
+            rev = "master";
+            # sha256 = "sha256-nHcQWTX4x4ala6+fvh4EWRVcZMNk5jZiZAwWhw03ExE=";
+            sha256 = "sha256-aNDOqY81FLFQ6bvsTiYgPyS5lJrqZnFMpvpTCSNyY0Y=";
+          };
+          file = "dist/rose-pine.tmTheme";
+        };
       };
 
       config = {
