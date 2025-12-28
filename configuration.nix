@@ -171,7 +171,7 @@
     wezterm
     ghostty
 
-    # (llama-cpp.override { cudaSupport = true; })
+    (llama-cpp.override { cudaSupport = true; })
   ];
 
   programs.steam = {
