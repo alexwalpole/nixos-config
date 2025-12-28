@@ -22,6 +22,11 @@
           set -l node_version "$statuscolor$node_version"
           echo -n -s $node_version 
           '';
+
+        branch_diff = ''
+          echo $argv
+          git log ( echo $argv[2] || echo 'main' )..(echo $argv[1]) --full-diff -p
+        '';
       };
 
 
