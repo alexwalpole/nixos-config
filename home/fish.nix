@@ -24,7 +24,6 @@
           '';
 
         branch_diff = ''
-          echo $argv
           git log ( echo $argv[2] || echo 'main' )..(echo $argv[1]) --full-diff -p
         '';
       };
@@ -37,31 +36,31 @@
         gst = "git status";
         gstsh = "git stash";
 
-# Django specific
+        # Django specific
         mp = "./manage.py";
         mps = "./manage.py shell";
 
-# uv
+        # uv
         ur = "uv run";
 
-# unix
+        # unix
         ls = "ls -Foga";
 
-# nvim
+        # nvim
         vim = "nvim .";
         vi = "nvim .";
 
-# nixos
+        # nixos
         nrbs = "sudo nixos-rebuild switch";
         ncg = "nix-collect-garbage";
-# TODO: make ./home.nix better
+        # TODO: make ./home.nix better
         nhs = "home-manager switch -f ./home.nix -b backup";
 
         lg = "lazygit";
 
       };
       shellInit = ''
-# use term colors for fish
+        # use term colors for fish
         set fish_color_normal normal
         set fish_color_command --bold
         set fish_color_param cyan
@@ -78,7 +77,7 @@
         set fish_greeting wassssupp
         set -gx EDITOR nvim
         '';
-# https://github.com/nix-community/home-manager/issues/6568#issuecomment-3111733446
+      # https://github.com/nix-community/home-manager/issues/6568#issuecomment-3111733446
       loginShellInit = pkgs.lib.optionalString pkgs.stdenv.isAarch64 ''
         source /nix/var/nix/profiles/default/etc/profile.d/nix-daemon.fish
         fish_add_path /run/current-system/sw/bin/
