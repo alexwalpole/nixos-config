@@ -152,6 +152,9 @@
     # gnomeExtensions.hide-top-bar
     gnomeExtensions.just-perfection
     gnomeExtensions.system-monitor
+    gnomeExtensions.tiling-shell
+    gnomeExtensions.search-light
+    gnomeExtensions.gsconnect
     # libgtop
     # gnomeExtensions.astra-monitor
     uv
