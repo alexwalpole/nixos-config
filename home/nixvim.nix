@@ -32,6 +32,7 @@ in
     ./nixvim/tiny-inline-diagnostic.nix
     ./nixvim/treesitter.nix
     ./nixvim/treesitter-context.nix
+    ./nixvim/llama.nix
     # ./nixvim/vim-closer.nix
     # For NixOS
     # nixvim.nixosModules.nixvim
