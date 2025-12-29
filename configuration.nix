@@ -64,7 +64,6 @@
     LC_TIME = "en_US.UTF-8";
   };
 
-
   # Enable the GNOME Desktop Environment.
   services.displayManager.gdm.enable = true;
   services.desktopManager.gnome.enable = true;
@@ -152,9 +151,9 @@
     # gnomeExtensions.hide-top-bar
     gnomeExtensions.just-perfection
     gnomeExtensions.system-monitor
-    gnomeExtensions.tiling-shell
     gnomeExtensions.search-light
     gnomeExtensions.gsconnect
+    gnomeExtensions.pop-shell
     # libgtop
     # gnomeExtensions.astra-monitor
     uv
