@@ -51,6 +51,7 @@
           nixd.enable = true;
           fish_lsp.enable = true;
           tsgo.enable = true;
+          rust_analyzer.enable = true;
 
           eslint = {
             enable = true;
