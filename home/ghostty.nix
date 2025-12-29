@@ -1,9 +1,9 @@
 { pkgs, config, ... }:
 let
   themeArgToGhosttyTheme = {
-    tokyonight = "tokyonight";
+    tokyonight = "TokyoNight";
     catpuccin-mocha = "Catppuccin Mocha";
-    catppuccin = "catppuccin-mocha";
+    catppuccin = "Catppuccin Mocha";
     nightfox = "nightfox";
     rose-pine = "Rose Pine";
     kanagawa = "Kanagawa Wave";
