@@ -169,6 +169,10 @@
     alacritty
     wezterm
     ghostty
+    # terminal animations
+    pipes
+    cmatrix
+    fireplace
 
     (llama-cpp.override { cudaSupport = true; })
   ];
