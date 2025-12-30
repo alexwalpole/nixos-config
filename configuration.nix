@@ -173,6 +173,8 @@
     pipes
     cmatrix
     fireplace
+    rustc
+    cargo
 
     (llama-cpp.override { cudaSupport = true; })
   ];
