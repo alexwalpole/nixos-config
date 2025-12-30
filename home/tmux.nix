@@ -26,6 +26,7 @@ let
     set -g status-left-length 50
     set -g status-left-style "bg=blue,fg=black"
 
+    set-option -g escape-time 10
   '';
   # set -g status-left "#[bg=blue,fg=black] #S #[default]   "
   nightFoxThemeConfig = ''
