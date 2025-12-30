@@ -239,6 +239,26 @@ in
           '';
           options.desc = "yank relative file path to system clipboard";
         }
+        {
+          key = "<Up>";
+          action = "<Nop>";
+          options.desc = "Disables arrow key";
+        }
+        {
+          key = "<Down>";
+          action = "<Nop>";
+          options.desc = "Disables arrow key";
+        }
+        {
+          key = "<Left>";
+          action = "<Nop>";
+          options.desc = "Disables arrow key";
+        }
+        {
+          key = "<Right>";
+          action = "<Nop>";
+          options.desc = "Disables arrow key";
+        }
       ];
       plugins = {
 
