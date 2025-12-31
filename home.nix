@@ -55,6 +55,7 @@ in
     ripgrep
     nixfmt-rfc-style
     nixfmt-tree
+    git-spice
   ];
 
   nixpkgs.config.allowUnfree = true;
