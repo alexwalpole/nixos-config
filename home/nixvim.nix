@@ -18,6 +18,32 @@ let
   #   maintaners = with lib.maintainers; [ rstacruz ];
   #   url = "https://github.com/rstacruz/vim-closer";
   # };
+  disabledArrows =
+    builtins.foldl'
+      (
+        acc: dir:
+        map
+          (mode: {
+
+            mode = mode;
+            key = dir;
+            action = "<Nop>";
+            options.desc = "Disables arrow key";
+          })
+          [
+            "n"
+            "i"
+            "c"
+          ]
+        ++ acc
+      )
+      [ ]
+      [
+        "<Up>"
+        "<Left>"
+        "<Down>"
+        "<Right>"
+      ];
 in
 {
   imports = [
@@ -239,27 +265,9 @@ in
           '';
           options.desc = "yank relative file path to system clipboard";
         }
-        {
-          key = "<Up>";
-          action = "<Nop>";
-          options.desc = "Disables arrow key";
-        }
-        {
-          key = "<Down>";
-          action = "<Nop>";
-          options.desc = "Disables arrow key";
-        }
-        {
-          key = "<Left>";
-          action = "<Nop>";
-          options.desc = "Disables arrow key";
-        }
-        {
-          key = "<Right>";
-          action = "<Nop>";
-          options.desc = "Disables arrow key";
-        }
-      ];
+
+      ]
+      ++ disabledArrows;
       plugins = {
 
         web-devicons.enable = true;
