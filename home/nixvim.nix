@@ -44,6 +44,10 @@ let
         "<Left>"
         "<Down>"
         "<Right>"
+        "<S-Up>"
+        "<S-Left>"
+        "<S-Down>"
+        "<S-Right>"
       ];
 in
 {
