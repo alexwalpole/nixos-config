@@ -30,7 +30,7 @@ in
         shell-integration-features = true;
         window-height = 40;
         window-width = 140;
-        font-size = 24;
+        font-size = 18;
         command = "${config.home.profileDirectory}/bin/fish --login --interactive";
         # shell
 
