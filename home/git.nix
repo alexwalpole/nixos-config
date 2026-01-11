@@ -12,7 +12,7 @@
         navigate = true;
         line-numbers = true;
         # This depends on the bat theme being set up...
-        syntax-theme = config.bat.theme;
+        # syntax-theme = config.bat.theme;
       };
     };
   };
