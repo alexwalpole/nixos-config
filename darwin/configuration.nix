@@ -10,7 +10,6 @@
     git
     home-manager
     terminal-notifier
-    bat
     direnv
   ];
 
