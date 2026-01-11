@@ -25,6 +25,7 @@ let
     set -g window-status-current-style fg=blue,bg=default,bold
     set -g status-left-length 50
     set -g status-left-style "bg=blue,fg=black"
+    set -g status-right '#(git -C #{pane_current_path} rev-parse --abbrev-ref HEAD)'
 
     set-option -g escape-time 10
   '';
