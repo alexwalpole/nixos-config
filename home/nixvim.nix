@@ -9,7 +9,7 @@ let
     builtins.fetchGit {
       url = "https://github.com/nix-community/nixvim";
       # If you are not running an unstable channel of nixpkgs, select the corresponding branch of Nixvim
-      # ref = "nixos-25.05";
+      ref = "nixos-25.11";
     }
   );
   homeDir = config.home.homeDirectory;
