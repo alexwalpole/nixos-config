@@ -8,7 +8,6 @@
     vim
     wget
     git
-    fish
     home-manager
     terminal-notifier
     direnv
