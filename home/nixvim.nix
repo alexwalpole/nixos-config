@@ -79,6 +79,7 @@ in
         "nightfox"
         "rose-pine"
         "kanagawa"
+        "dracula"
       ];
       default = "tokyonight";
       description = "Theme for Nixvim.";
@@ -93,6 +94,7 @@ in
       colorschemes.nightfox.enable = lib.mkIf (config.nixvim.theme == "nightfox") true;
       colorschemes.rose-pine.enable = lib.mkIf (config.nixvim.theme == "rose-pine") true;
       colorschemes.kanagawa.enable = lib.mkIf (config.nixvim.theme == "kanagawa") true;
+      colorschemes.dracula.enable = lib.mkIf (config.nixvim.theme == "dracula") true;
 
       extraConfigLua = ''
         vim.cmd("highlight! link SignColumn Normal")

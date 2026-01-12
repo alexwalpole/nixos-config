@@ -7,6 +7,7 @@ let
     nightfox = "nightfox";
     rose-pine = "Rose Pine";
     kanagawa = "Kanagawa Wave";
+    dracula = "Dracula";
   };
 
 in
@@ -32,24 +33,6 @@ in
         window-width = 140;
         font-size = 18;
         command = "${config.home.profileDirectory}/bin/fish --login --interactive";
-        # shell
-
-        # # theme = Catppuccin Mocha
-        # # theme = Nightfox
-        # # theme = Rose Pine
-        # theme = TokyoNight Night
-        # # window-decoration = none
-        #
-        #
-        # shell-integration = fish
-        # shell-integration-features = true
-        # command = /opt/homebrew/bin/fish --login --interactive
-        # window-height = 40
-        # window-width = 140
-        #
-        #
-        # font-size = 24
-
       };
     };
   };
