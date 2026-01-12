@@ -17,7 +17,6 @@ in
 
   ];
 
-  tmux.theme = theme;
   ghostty.theme = theme;
   nixvim.theme = theme;
   # This value determines the Home Manager release that your configuration is
