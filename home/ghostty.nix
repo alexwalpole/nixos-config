@@ -8,6 +8,8 @@ let
     rose-pine = "Rose Pine";
     kanagawa = "Kanagawa Wave";
     dracula = "Dracula";
+    oxocarbon = "Oxocarbon";
+    melange = "Melange Dark";
   };
 
 in
