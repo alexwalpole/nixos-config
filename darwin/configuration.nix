@@ -10,6 +10,8 @@
     home-manager
     terminal-notifier
     direnv
+    pipes
+    cmatrix
   ];
 
   system.primaryUser = "alexwalpole";
