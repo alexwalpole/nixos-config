@@ -266,7 +266,7 @@ in
           key = "<leader>yf";
           action.__raw = ''
             function()
-              local filepath = vim.fn.expand("%:p")
+              local filepath = vim.fn.expand("%")
               vim.fn.setreg("+", filepath)
             end
           '';
@@ -279,7 +279,9 @@ in
 
         web-devicons.enable = true;
         # vim-closer.enable = true;
-        lualine.enable = true;
+        lualine = {
+          enable = true;
+        };
         mini-snippets.enable = true;
         mini-completion.enable = true;
         vim-surround.enable = true;
