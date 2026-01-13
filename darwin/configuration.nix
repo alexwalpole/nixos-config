@@ -7,7 +7,6 @@
   environment.systemPackages = with pkgs; [
     vim
     wget
-    git
     home-manager
     terminal-notifier
     direnv
