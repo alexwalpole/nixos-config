@@ -59,6 +59,7 @@ in
     rustc
     cargo
     postgresql
+    vscode-js-debug
   ];
 
   nixpkgs.config.allowUnfree = true;

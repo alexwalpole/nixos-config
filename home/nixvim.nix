@@ -286,6 +286,21 @@ in
         mini-completion.enable = true;
         vim-surround.enable = true;
         copilot-vim.enable = true;
+
+        dap.enable = true;
+        dap.adapters.servers = {
+          "pwa-node" = {
+            host = "localhost";
+            port = "\${port}";
+            executable = {
+              command = "node";
+              args = [
+                "${pkgs.vscode-js-debug}/lib/node_modules/js-debug/dist/src/dapDebugServer.js"
+                "\${port}"
+              ];
+            };
+          };
+        };
         vim-dadbod-ui.enable = true;
       };
 
