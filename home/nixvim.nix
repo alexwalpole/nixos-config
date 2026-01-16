@@ -286,6 +286,7 @@ in
         mini-completion.enable = true;
         vim-surround.enable = true;
         copilot-vim.enable = true;
+        vim-dadbod-ui.enable = true;
       };
 
       nixpkgs.config.allowUnfreePredicate =

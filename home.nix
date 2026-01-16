@@ -58,6 +58,7 @@ in
     git-spice
     rustc
     cargo
+    postgresql
   ];
 
   nixpkgs.config.allowUnfree = true;
