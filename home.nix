@@ -1,6 +1,6 @@
 { pkgs, ... }:
 let
-  theme = "rose-pine";
+  theme = "tokyonight";
 in
 {
   # Home Manager needs a bit of information about you and the paths it should
@@ -14,11 +14,12 @@ in
     ./home/ghostty.nix
     ./home/lazygit.nix
     ./home/git.nix
-
+    ./home/bat.nix
   ];
 
   ghostty.theme = theme;
   nixvim.theme = theme;
+  bat.theme = theme;
   # This value determines the Home Manager release that your configuration is
   # compatible with. This helps avoid breakage when a new Home Manager release
   # introduces backwards incompatible changes.
