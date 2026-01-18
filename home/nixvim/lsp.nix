@@ -51,7 +51,15 @@
           nixd.enable = true;
           fish_lsp.enable = true;
           tsgo.enable = true;
-          rust_analyzer.enable = true;
+          rust_analyzer = {
+            enable = true;
+            # my understanding is that even though the code below indicates
+            # nixvim should install rustc and cargo, it won't duplicate my home
+            # manager installation of the same
+            installRustc = true;
+            installCargo = true;
+            installRustfmt = true;
+          };
 
           eslint = {
             enable = true;

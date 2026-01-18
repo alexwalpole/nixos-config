@@ -56,6 +56,8 @@ in
     nixfmt-rfc-style
     nixfmt-tree
     git-spice
+    rustc
+    cargo
   ];
 
   nixpkgs.config.allowUnfree = true;
