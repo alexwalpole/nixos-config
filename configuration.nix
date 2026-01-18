@@ -67,6 +67,12 @@
   # Enable the GNOME Desktop Environment.
   services.displayManager.gdm.enable = true;
   services.desktopManager.gnome.enable = true;
+  services.displayManager.gdm.wayland = true;
+
+  programs.hyprland = {
+    enable = true;
+    xwayland.enable = true;
+  };
 
   # Enable CUPS to print documents.
   services.printing.enable = true;
@@ -166,7 +172,7 @@
     lazygit
     gcc
     tmux
-    alacritty
+    kitty
     wezterm
     ghostty
     # terminal animations
@@ -177,6 +183,8 @@
     cargo
 
     (llama-cpp.override { cudaSupport = true; })
+
+    devenv
   ];
 
   programs.steam = {
