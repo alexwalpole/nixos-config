@@ -50,7 +50,7 @@
         servers = {
           nixd.enable = true;
           fish_lsp.enable = true;
-          tsgo.enable = true;
+          ts_ls.enable = true;
           rust_analyzer = {
             enable = true;
             # my understanding is that even though the code below indicates
@@ -60,6 +60,7 @@
             installCargo = true;
             installRustfmt = true;
           };
+          sqls.enable = true;
 
           eslint = {
             enable = true;
