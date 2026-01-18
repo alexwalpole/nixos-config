@@ -2,8 +2,10 @@
 {
   programs.git = {
     enable = true;
-    userName = "Alex Walpole";
-    userEmail = "alexcwalpole@gmail.com";
+    settings.user = {
+      name = "Alex Walpole";
+      email = "alexcwalpole@gmail.com";
+    };
     ignores = [ ".DS_Store" ];
 
     delta = {
