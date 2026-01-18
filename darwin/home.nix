@@ -9,6 +9,5 @@
   home.username = lib.mkForce "alexwalpole";
   home.homeDirectory = lib.mkForce "/Users/alexwalpole";
 
-
   # programs.aerospace.enable = true;
 }

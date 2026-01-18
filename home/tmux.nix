@@ -1,7 +1,6 @@
 { config, ... }:
 let
 
-
   extraConfig = ''
     set -g base-index 1
     set -g mouse on
