@@ -15,6 +15,7 @@ in
     ./home/lazygit.nix
     ./home/git.nix
     ./home/bat.nix
+    ./home/delta.nix
   ];
 
   ghostty.theme = theme;
