@@ -65,6 +65,7 @@ in
     ./nixvim/treesitter-context.nix
     ./nixvim/llama.nix
     ./nixvim/cmp.nix
+    ./nixvim/lualine.nix
     # ./nixvim/vim-closer.nix
     # For NixOS
     # nixvim.nixosModules.nixvim
@@ -280,9 +281,6 @@ in
 
         web-devicons.enable = true;
         # vim-closer.enable = true;
-        lualine = {
-          enable = true;
-        };
         vim-surround.enable = true;
         copilot-vim.enable = true;
         # TODO: vim.keymap.set('i', '<C-l>', '<Plug>(copilot-accept-word)')
