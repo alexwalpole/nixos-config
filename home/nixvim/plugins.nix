@@ -1,5 +1,4 @@
 {
-  pkgs,
   lib,
   ...
 }:
@@ -17,6 +16,7 @@
     ./plugins/llama.nix
     ./plugins/cmp.nix
     ./plugins/lualine.nix
+    ./plugins/dap.nix
   ];
 
   programs.nixvim = {
@@ -27,20 +27,6 @@
       copilot-vim.enable = true;
       # TODO: vim.keymap.set('i', '<C-l>', '<Plug>(copilot-accept-word)')
 
-      dap.enable = true;
-      dap.adapters.servers = {
-        "pwa-node" = {
-          host = "localhost";
-          port = "\${port}";
-          executable = {
-            command = "node";
-            args = [
-              "${pkgs.vscode-js-debug}/lib/node_modules/js-debug/dist/src/dapDebugServer.js"
-              "\${port}"
-            ];
-          };
-        };
-      };
       vim-dadbod-ui.enable = true;
     };
     nixpkgs.config.allowUnfreePredicate =
