@@ -1,17 +1,7 @@
+{ pkgs, lib, config, ... }:
 {
-  pkgs,
-  lib,
-  ...
-}:
-let
-  mac-app-util-src = builtins.fetchTarball "https://github.com/hraban/mac-app-util/archive/master.tar.gz";
-  mac-app-util = import mac-app-util-src { };
-in
-{
-
   imports = [
     ../home.nix
-    mac-app-util.homeManagerModules.default
   ];
   # ghostty isn't available in nixpkgs for darwin yet :/
   programs.ghostty.package = pkgs.ghostty-bin;
