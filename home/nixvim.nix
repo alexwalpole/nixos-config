@@ -285,6 +285,7 @@ in
         };
         vim-surround.enable = true;
         copilot-vim.enable = true;
+        # TODO: vim.keymap.set('i', '<C-l>', '<Plug>(copilot-accept-word)')
 
         dap.enable = true;
         dap.adapters.servers = {
