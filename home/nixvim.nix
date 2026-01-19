@@ -64,6 +64,7 @@ in
     ./nixvim/treesitter.nix
     ./nixvim/treesitter-context.nix
     ./nixvim/llama.nix
+    ./nixvim/cmp.nix
     # ./nixvim/vim-closer.nix
     # For NixOS
     # nixvim.nixosModules.nixvim
@@ -282,8 +283,6 @@ in
         lualine = {
           enable = true;
         };
-        mini-snippets.enable = true;
-        mini-completion.enable = true;
         vim-surround.enable = true;
         copilot-vim.enable = true;
 
