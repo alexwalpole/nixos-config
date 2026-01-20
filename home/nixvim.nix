@@ -52,14 +52,7 @@ in
     programs.nixvim.enable = true;
 
     programs.nixvim = {
-      colorschemes.tokyonight.enable = lib.mkIf (config.nixvim.theme == "tokyonight") true;
-      colorschemes.catppuccin.enable = lib.mkIf (config.nixvim.theme == "catppuccin") true;
-      colorschemes.nightfox.enable = lib.mkIf (config.nixvim.theme == "nightfox") true;
-      colorschemes.rose-pine.enable = lib.mkIf (config.nixvim.theme == "rose-pine") true;
-      colorschemes.kanagawa.enable = lib.mkIf (config.nixvim.theme == "kanagawa") true;
-      colorschemes.dracula.enable = lib.mkIf (config.nixvim.theme == "dracula") true;
-      colorschemes.oxocarbon.enable = lib.mkIf (config.nixvim.theme == "oxocarbon") true;
-      colorschemes.melange.enable = lib.mkIf (config.nixvim.theme == "melange") true;
+      colorschemes."${config.nixvim.theme}".enable = true;
 
       extraConfigLua = ''
         vim.cmd("highlight! link SignColumn Normal")
