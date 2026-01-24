@@ -31,6 +31,7 @@ in
         theme = themeArgToGhosttyTheme.${config.ghostty.theme};
         shell-integration = "fish";
         shell-integration-features = true;
+        window-decoration = "none";
         window-height = 40;
         window-width = 140;
         font-size = 18;
