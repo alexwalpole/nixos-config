@@ -6,10 +6,11 @@
         enable = true;
         # manually listing cmp-path etc below instead of implicitly including
         # them based on the sources below
-        autoEnableSources = false;
+        autoEnableSources = true;
         settings = {
           sources = [
             { name = "nvim_lsp"; }
+            { name = "luasnip"; }
             { name = "path"; }
             { name = "buffer"; }
           ];
@@ -50,6 +51,7 @@
       cmp-path.enable = true;
       cmp-buffer.enable = true;
       cmp_luasnip.enable = true;
+      friendly-snippets.enable = true;
 
       luasnip.enable = true;
       luasnip.settings = {

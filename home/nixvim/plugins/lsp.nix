@@ -50,7 +50,17 @@
         servers = {
           nixd.enable = true;
           fish_lsp.enable = true;
-          ts_ls.enable = true;
+          ts_ls = {
+            enable = true;
+            settings = {
+              completions = {
+                # Maybe i'm an idiot but it was not obvious i needed to explicitly
+                # enable this to get function call completions working properly
+                completeFunctionCalls = true;
+              };
+            };
+
+          };
           rust_analyzer = {
             enable = true;
             # my understanding is that even though the code below indicates
