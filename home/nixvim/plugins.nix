@@ -26,6 +26,7 @@
       vim-surround.enable = true;
       copilot-vim.enable = true;
       debugprint.enable = true;
+      abolish.enable = true;
       # TODO: vim.keymap.set('i', '<C-l>', '<Plug>(copilot-accept-word)')
 
       vim-dadbod-ui.enable = true;
