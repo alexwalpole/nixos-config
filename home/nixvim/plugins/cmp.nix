@@ -2,9 +2,16 @@
 { lib, ... }:
 {
   programs.nixvim = {
+    opts = {
+      completeopt = "menu,menuone,noselect";
+    };
+
     plugins = {
       cmp = {
         enable = true;
+        luaConfig.pre = ''
+          vim.opt.shortmess:append "c"
+        '';
         # manually listing cmp-path etc below instead of implicitly including
         # them based on the sources below
         autoEnableSources = true;
