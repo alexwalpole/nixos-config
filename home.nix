@@ -60,6 +60,7 @@ in
     cargo
     postgresql
     vscode-js-debug
+    duckdb
   ];
 
   programs.pay-respects.enable = true;
