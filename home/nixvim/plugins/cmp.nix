@@ -104,7 +104,7 @@
 
         vim.keymap.set(
           {"i", "s"},
-          "<c-k>",
+          "<c-j>",
           function()
             if ls.expand_or_jumpable() then
               ls.expand_or_jump()
@@ -114,7 +114,7 @@
         )
         vim.keymap.set(
           {"i", "s"},
-          "<c-j>",
+          "<c-k>",
           function()
             if ls.jumpable(-1) then
               ls.jump(-1)
