@@ -1,7 +1,6 @@
 {
   config,
   pkgs,
-  lib,
   ...
 }:
 let
@@ -43,6 +42,8 @@ in
         "dracula"
         "oxocarbon"
         "melange"
+        "gruvbox"
+        "gruvbox-material"
       ];
       default = "tokyonight";
       description = "Theme for Nixvim.";

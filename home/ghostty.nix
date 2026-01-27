@@ -10,6 +10,8 @@ let
     dracula = "Dracula";
     oxocarbon = "Oxocarbon";
     melange = "Melange Dark";
+    gruvbox = "Gruvbox Dark";
+    gruvbox-material = "Gruvbox Material Dark";
   };
 
 in
