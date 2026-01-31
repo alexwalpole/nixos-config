@@ -17,6 +17,7 @@ let
     set -g status-justify centre
 
 
+    set -g mode-style fg=brightyellow,bold,bg=default
     bind s choose-session -F "#[fg=green]» #{pane_current_path} #[fg=magenta](#(cd #{pane_current_path}; git rev-parse --abbrev-ref HEAD 2>/dev/null || echo 'no-git'))"
 
     set-option -g escape-time 10
