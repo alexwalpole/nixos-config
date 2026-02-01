@@ -1,9 +1,4 @@
 # Keymaps that aren't related to a specific plugin
-{
-  pkgs,
-  lib,
-  ...
-}:
 let
   disabledArrows =
     builtins.foldl'
@@ -162,7 +157,7 @@ in
         key = "<leader>yf";
         action.__raw = ''
           function()
-            local filepath = vim.fn.expand("%")
+            local filepath = vim.fn.expand("%:.")
             vim.fn.setreg("+", filepath)
           end
         '';
