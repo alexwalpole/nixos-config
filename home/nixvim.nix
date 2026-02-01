@@ -44,6 +44,7 @@ in
         "melange"
         "gruvbox"
         "gruvbox-material"
+        "nord"
       ];
       default = "tokyonight";
       description = "Theme for Nixvim.";

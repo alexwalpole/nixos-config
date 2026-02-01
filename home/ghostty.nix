@@ -12,6 +12,7 @@ let
     melange = "Melange Dark";
     gruvbox = "Gruvbox Dark";
     gruvbox-material = "Gruvbox Material Dark";
+    nord = "Nord";
   };
 
 in
