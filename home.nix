@@ -50,6 +50,7 @@ in
     #   echo "Hello, ${config.home.username}!"
     # '')
     bat
+    gh
     btop
     delta
     ripgrep
@@ -61,6 +62,7 @@ in
     postgresql
     vscode-js-debug
     duckdb
+    docker
   ];
 
   programs.pay-respects.enable = true;
