@@ -26,6 +26,11 @@
         branch_diff = ''
           git log ( echo $argv[2] || echo 'main' )..(echo $argv[1]) --full-diff -p
         '';
+
+        dir_sed = ''
+          find (echo $argv[1]) -type f -exec sed -i ''\'' -e '(echo $argv[2])' {} \;
+        '';
+
       };
 
       shellAbbrs = {
