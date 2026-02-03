@@ -58,6 +58,22 @@ in
 
       extraConfigLua = ''
         vim.cmd("highlight! link SignColumn Normal")
+        vim.api.nvim_create_autocmd('BufEnter', {
+          pattern = {'*.md'},
+          group = group,
+          command = 'setlocal wrap'
+        })
+        vim.api.nvim_create_autocmd('BufEnter', {
+          pattern = {'*.md', '*.nix'},
+          group = group,
+          command = ':Copilot disable'
+        })
+
+        vim.api.nvim_create_autocmd('BufLeave', {
+          pattern = {'*.md', '*.nix'},
+          group = group,
+          command = ':Copilot enable'
+        })
 
       '';
       opts = {
