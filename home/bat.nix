@@ -1,4 +1,22 @@
-{ pkgs, config, ... }:
+{
+  pkgs,
+  config,
+  ...
+}:
+let
+  themeMap = {
+    "nord" = "Nord";
+    "gruvbox-material" = "gruvbox-dark";
+  };
+  themeArgTransForm =
+    theme:
+    if builtins.hasAttr theme themeMap then
+      themeMap.${theme}
+
+    else
+      theme;
+
+in
 {
   options.bat = {
     theme = pkgs.lib.mkOption {
@@ -8,6 +26,9 @@
         "nightfox"
         "rose-pine"
         "kanagawa"
+        "gruvbox"
+        "gruvbox-material"
+        "nord"
       ];
       default = "tokyonight";
       description = "Theme for Nixvim.";
@@ -65,7 +86,8 @@
         };
       };
       config = {
-        theme = config.bat.theme;
+        # theme = if config.bat.theme == "gruvbox-material" then "gruvbox-dark" else config.bat.theme;
+        theme = themeArgTransForm config.bat.theme;
       };
     };
   };
