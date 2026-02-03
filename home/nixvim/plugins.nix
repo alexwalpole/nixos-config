@@ -7,7 +7,7 @@
     ./plugins/harpoon.nix
     ./plugins/lsp.nix
     ./plugins/fugitive.nix
-    ./plugins/telescope.nix
+    ./plugins/snacks.nix
     ./plugins/undotree.nix
     ./plugins/gitblame.nix
     ./plugins/tiny-inline-diagnostic.nix
