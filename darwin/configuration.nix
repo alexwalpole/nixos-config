@@ -15,6 +15,9 @@
   ];
 
   system.primaryUser = "alexwalpole";
+  system.keyboard.enableKeyMapping = true;
+  system.keyboard.remapCapsLockToEscape = true;
+
 
   home-manager.backupFileExtension = "backup";
   services.aerospace.enable = false;
