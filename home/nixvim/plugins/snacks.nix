@@ -94,6 +94,7 @@
 
     plugins.snacks = {
       enable = true;
+      settings.picker.ui_select = true;
     };
   };
 }
