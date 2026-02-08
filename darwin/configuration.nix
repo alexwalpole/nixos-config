@@ -15,9 +15,10 @@
   ];
 
   system.primaryUser = "alexwalpole";
+  system.defaults.dock.autohide = true;
   system.keyboard.enableKeyMapping = true;
   system.keyboard.remapCapsLockToEscape = true;
-
+  system.defaults.NSGlobalDomain._HIHideMenuBar = true;
 
   home-manager.backupFileExtension = "backup";
   services.aerospace.enable = false;
