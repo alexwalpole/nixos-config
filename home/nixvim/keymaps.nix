@@ -35,13 +35,13 @@ in
 {
   programs.nixvim = {
     keymaps = [
-      {
-        mode = "n";
-        key = "<leader>pv";
-        # TODO use mkRaw instead
-        action.__raw = "vim.cmd.Ex";
-        options.desc = "Open Netrw Explorer";
-      }
+      # {
+      #   mode = "n";
+      #   key = "<leader>pv";
+      #   # TODO use mkRaw instead
+      #   action.__raw = "vim.cmd.Ex";
+      #   options.desc = "Open Netrw Explorer";
+      # }
 
       {
         mode = "v";

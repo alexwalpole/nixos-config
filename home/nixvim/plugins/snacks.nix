@@ -77,24 +77,50 @@
             require('snacks').picker.grep()
           end
         '';
-        options.desc = "Telescope Grep string";
+        options.desc = "Snacks Grep string";
       }
       {
         mode = "n";
         key = "<leader>fr";
         action.__raw = "function() require('snacks').picker.lsp_references() end";
-        options.desc = "Telescope LSP references";
+        options.desc = "Snacks LSP references";
       }
       # {
       #   mode = "n";
       #   key = "<leader>rg";
       #   action.__raw = "function() require('telescope').extensions.live_grep_args.live_grep_args() end";
       # }
+      {
+        mode = "n";
+        key = "<leader>pv";
+        # TODO use mkRaw instead
+        action.__raw = "function() require('snacks').explorer() end";
+        options.desc = "Open Explorer";
+      }
     ];
+    userCommands = {
+      OpenExplorer = {
+        command = "lua require('snacks').explorer()";
+      };
+    };
 
     plugins.snacks = {
       enable = true;
       settings.picker.ui_select = true;
+      settings.picker.sources.explorer.layout.layout.position = "right";
+      # settings.picker.sources.explorer.layout.auto_hide = "input";
+      settings.explorer.replace_netrw = true;
+      settings.explorer.enabled = true;
+      settings.bigfile.enabled = true;
+      settings.indent.enabled = true;
+      settings.notify.enabled = true;
+      settings.rename.enabled = true;
+      settings.dashboard = {
+        # preset = { header = ""; };
+        sections = [
+          { section = "header"; }
+        ];
+      };
     };
   };
 }
