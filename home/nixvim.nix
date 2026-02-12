@@ -1,6 +1,7 @@
 {
   config,
   pkgs,
+  lib,
   ...
 }:
 let
@@ -77,18 +78,18 @@ in
           command = 'setlocal wrap'
         })
         vim.api.nvim_create_autocmd('BufEnter', {
-          pattern = {'*.md', '*.nix'},
+          pattern = {'*.md', '*.nix', '*.env', '.envrc'},
           group = group,
           command = ':Copilot disable'
         })
 
         vim.api.nvim_create_autocmd('BufLeave', {
-          pattern = {'*.md', '*.nix'},
+          pattern = {'*.md', '*.nix', '*.env', '.envrc'},
           group = group,
           command = ':Copilot enable'
         })
-
       '';
+
       opts = {
         number = true;
         relativenumber = true;
@@ -113,7 +114,8 @@ in
 
         termguicolors = true;
 
-        scrolloff = 8;
+        # keep the cursor centered
+        scrolloff = 999;
         signcolumn = "yes";
 
         isfname.append = [ "@-@" ];
