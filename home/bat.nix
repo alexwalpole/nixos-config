@@ -7,29 +7,21 @@ let
   themeMap = {
     "nord" = "Nord";
     "gruvbox-material" = "gruvbox-dark";
-  };
-  themeArgTransForm =
-    theme:
-    if builtins.hasAttr theme themeMap then
-      themeMap.${theme}
 
-    else
-      theme;
+    "tokyonight" = "tokyonight";
+    "catppuccin" = "catppuccin";
+    "nightfox" = "nightfox";
+    "rose-pine" = "rose-pine";
+    "kanagawa" = "kanagawa";
+    "gruvbox" = "gruvbox";
+  };
+  themeArgTransForm = theme: if builtins.hasAttr theme themeMap then themeMap.${theme} else "ansi";
 
 in
 {
   options.bat = {
     theme = pkgs.lib.mkOption {
-      type = pkgs.lib.types.enum [
-        "tokyonight"
-        "catppuccin"
-        "nightfox"
-        "rose-pine"
-        "kanagawa"
-        "gruvbox"
-        "gruvbox-material"
-        "nord"
-      ];
+      type = pkgs.lib.types.str;
       default = "tokyonight";
       description = "Theme for Nixvim.";
     };

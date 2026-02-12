@@ -4,8 +4,14 @@ let
     tokyonight = "TokyoNight Moon";
     catpuccin-mocha = "Catppuccin Mocha";
     catppuccin = "Catppuccin Mocha";
+    catppuccin-latte = "Catppuccin Latte";
+    catppuccin-macchiato = "Catppuccin Macchiato";
+    catppuccin-frappe = "Catppuccin Frappe";
     nightfox = "nightfox";
+    dawnfox = "Dawnfox";
     rose-pine = "Rose Pine";
+    rose-pine-dawn = "Rose Pine Dawn";
+    rose-pine-moon = "Rose Pine Moon";
     kanagawa = "Kanagawa Wave";
     dracula = "Dracula";
     oxocarbon = "Oxocarbon";

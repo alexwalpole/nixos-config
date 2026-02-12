@@ -36,7 +36,9 @@ in
       type = pkgs.lib.types.enum [
         "tokyonight"
         "catppuccin"
+        "catppuccin-frappe"
         "nightfox"
+        "dawnfox"
         "rose-pine"
         "kanagawa"
         "dracula"
@@ -54,7 +56,18 @@ in
     programs.nixvim.enable = true;
 
     programs.nixvim = {
-      colorschemes."${config.nixvim.theme}".enable = true;
+      colorschemes."tokyonight".enable = true;
+      colorschemes."catppuccin".enable = true;
+      colorschemes."nightfox".enable = true;
+      colorschemes."rose-pine".enable = true;
+      colorschemes."kanagawa".enable = true;
+      colorschemes."dracula".enable = true;
+      colorschemes."oxocarbon".enable = true;
+      colorschemes."melange".enable = true;
+      colorschemes."gruvbox".enable = true;
+      colorschemes."gruvbox-material".enable = true;
+      colorschemes."nord".enable = true;
+      colorscheme = lib.mkForce config.nixvim.theme;
 
       extraConfigLua = ''
         vim.cmd("highlight! link SignColumn Normal")
