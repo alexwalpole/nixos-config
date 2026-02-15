@@ -12,8 +12,6 @@
     ./plugins/gitblame.nix
     ./plugins/tiny-inline-diagnostic.nix
     ./plugins/treesitter.nix
-    ./plugins/treesitter-context.nix
-    ./plugins/llama.nix
     ./plugins/cmp.nix
     ./plugins/lualine.nix
     ./plugins/dap.nix
