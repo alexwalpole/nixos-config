@@ -102,6 +102,18 @@
       OpenExplorer = {
         command = "lua require('snacks').explorer()";
       };
+      SnacksResumePicker = {
+        command = "lua require('snacks').picker.resume()";
+      };
+      SnacksSearchHistory = {
+        command = "lua require('snacks').picker.search_history()";
+      };
+      SnacksRecentPicker = {
+        command = "lua require('snacks').picker.recent()";
+      };
+      SnacksDiagnosticsPicker = {
+        command = "lua require('snacks').picker.diagnostics()";
+      };
     };
 
     plugins.snacks = {
