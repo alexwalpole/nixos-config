@@ -108,6 +108,12 @@
       enable = true;
       settings.picker.ui_select = true;
       settings.picker.sources.explorer.layout.layout.position = "right";
+      settings.picker.sources.explorer.layout.layout.width = 0.3;
+      settings.picker.sources.explorer.layout.auto_hide = {
+        # this is fucked up
+        __raw = ''{ "input" }'';
+      };
+      # opts.picker.sources.explorer.layout.auto_hide = {"input"}
       # settings.picker.sources.explorer.layout.auto_hide = "input";
       settings.explorer.replace_netrw = true;
       settings.explorer.enabled = true;
