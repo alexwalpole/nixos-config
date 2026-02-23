@@ -163,6 +163,40 @@ in
         '';
         options.desc = "yank relative file path to system clipboard";
       }
+#       vim.api.nvim_set_keymap('n', '<C-h>', '<C-w>h', { noremap = true, silent = true })
+# vim.api.nvim_set_keymap('n', '<C-j>', '<C-w>j', { noremap = true, silent = true })
+# vim.api.nvim_set_keymap('n', '<C-k>', '<C-w>k', { noremap = true, silent = true })
+# vim.api.nvim_set_keymap('n', '<C-l>', '<C-w>l', { noremap = true, silent = true })
+
+      {
+        mode = "n";
+        key = "<C-h>";
+        action = "<C-w>h";
+        options.noremap = true;
+        options.silent = true;
+      }
+      {
+        mode = "n";
+        key = "<C-j>";
+        action = "<C-w>j";
+        options.noremap = true;
+        options.silent = true;
+      }
+      {
+        mode = "n";
+        key = "<C-k>";
+        action = "<C-w>k";
+        options.noremap = true;
+        options.silent = true;
+      }
+      {
+        mode = "n";
+        key = "<C-l>";
+        action = "<C-w>l";
+        options.noremap = true;
+        options.silent = true;
+      }
+
 
     ]
     ++ disabledArrows;
