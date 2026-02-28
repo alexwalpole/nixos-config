@@ -51,13 +51,12 @@
         ls = "ls -Foga";
 
         # nvim
-        vim = "nvim .";
-        vi = "nvim .";
+        vim = "nvim";
+        vi = "nvim";
 
         # nixos
         nrbs = "sudo nixos-rebuild switch";
         ncg = "nix-collect-garbage";
-        # TODO: make ./home.nix better
         nhs = "home-manager switch -f ./home.nix -b backup";
 
         lg = "lazygit";
@@ -77,6 +76,7 @@
         set fish_color_quote yellow
         set fish_color_autosuggestion 555 brblack
         set fish_color_user brgreen
+        set -g fish_key_bindings fish_vi_key_bindings
 
         set fish_greeting wassssupp
         set -gx EDITOR nvim
