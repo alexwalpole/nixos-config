@@ -16,7 +16,7 @@
       }
       {
         mode = "n";
-        key = "<C-h>";
+        key = "<C-y>";
         action.__raw = "function() require('harpoon'):list():select(1) end";
         options.desc = "Harpoon Select File 1";
       }
