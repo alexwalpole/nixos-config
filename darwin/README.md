@@ -46,3 +46,7 @@ sudo nix-channel --add https://nixos.org/channels/nixpkgs-25.11-darwin nixpkgs
 sudo nix-channel --update                                                     
 nix-build '<darwin>' -A darwin-rebuild        
 
+# home-manager
+sudo nix-channel --add https://github.com/nix-community/home-manager/archive/release-25.11.tar.gz home-manager
+sudo nix-channel --update                                                     
+
