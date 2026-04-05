@@ -33,3 +33,16 @@ Needed to manually add nixpkgs channel
 ``
 ➜  ~ sudo nix-channel --add https://nixos.org/channels/nixpkgs-unstable                                                          v20.18.3
 ``
+
+
+
+installing on my t2 macbook pro:
+```
+export NIX_INSTALLER_USE_LEGACY_INTEL_MAC_VERSION=1 
+curl -sSf -L https://install.lix.systems/lix | sh -s -- install
+. /nix/var/nix/profiles/default/etc/profile.d/nix-daemon.sh  
+sudo nix-channel --add https://github.com/nix-darwin/nix-darwin/archive/nix-darwin-25.11.tar.gz darwin
+sudo nix-channel --add https://nixos.org/channels/nixpkgs-25.11-darwin nixpkgs
+sudo nix-channel --update                                                     
+nix-build '<darwin>' -A darwin-rebuild        
+
