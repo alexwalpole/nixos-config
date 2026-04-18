@@ -16,6 +16,7 @@ in
     ./home/git.nix
     ./home/bat.nix
     ./home/delta.nix
+    ./home/i3.nix
   ];
 
   ghostty.theme = theme;
