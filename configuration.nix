@@ -69,6 +69,18 @@
   services.desktopManager.gnome.enable = true;
   services.displayManager.gdm.wayland = true;
 
+  services.xserver = {
+    enable = true;
+    windowManager.i3 = {
+      enable = true;
+      extraPackages = with pkgs; [
+        dmenu
+        i3status
+        i3lock
+      ];
+    };
+  };
+
   programs.hyprland = {
     enable = true;
     xwayland.enable = true;
@@ -106,6 +118,11 @@
         "a2dp_source"
       ];
     };
+  };
+
+  services.avahi = {
+
+    enable = true;
   };
 
   # Enable touchpad support (enabled default in most desktopManager).
