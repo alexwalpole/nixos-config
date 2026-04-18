@@ -163,10 +163,10 @@ in
         '';
         options.desc = "yank relative file path to system clipboard";
       }
-#       vim.api.nvim_set_keymap('n', '<C-h>', '<C-w>h', { noremap = true, silent = true })
-# vim.api.nvim_set_keymap('n', '<C-j>', '<C-w>j', { noremap = true, silent = true })
-# vim.api.nvim_set_keymap('n', '<C-k>', '<C-w>k', { noremap = true, silent = true })
-# vim.api.nvim_set_keymap('n', '<C-l>', '<C-w>l', { noremap = true, silent = true })
+      #       vim.api.nvim_set_keymap('n', '<C-h>', '<C-w>h', { noremap = true, silent = true })
+      # vim.api.nvim_set_keymap('n', '<C-j>', '<C-w>j', { noremap = true, silent = true })
+      # vim.api.nvim_set_keymap('n', '<C-k>', '<C-w>k', { noremap = true, silent = true })
+      # vim.api.nvim_set_keymap('n', '<C-l>', '<C-w>l', { noremap = true, silent = true })
 
       {
         mode = "n";
@@ -196,7 +196,20 @@ in
         options.noremap = true;
         options.silent = true;
       }
-
+      {
+        mode = "n";
+        key = "}";
+        action = ":keepjumps normal! }<CR>";
+        options.desc = "Don't add paragraph jump forward to jumplist";
+        options.silent = true;
+      }
+      {
+        mode = "n";
+        key = "{";
+        action = ":keepjumps normal! {<CR>";
+        options.desc = "Don't add paragraph jump backward to jumplist";
+        options.silent = true;
+      }
 
     ]
     ++ disabledArrows;
